@@ -1,0 +1,26 @@
+2023-05-07 11:37:27,675 INFO    : Pytorch 1.13.1
+2023-05-07 11:37:27,676 INFO    : [INFO] Create Vocab, vocab path is cache/arxiv/vocab
+2023-05-07 11:37:27,714 INFO    : [INFO] max_size of vocab was specified as 50000; we now have 50000 words. Stopping reading.
+2023-05-07 11:37:27,714 INFO    : [INFO] Finished constructing vocabulary of 50000 total words. Last word added: e.laenen
+2023-05-07 11:37:27,801 INFO    : [INFO] Loading external word embedding...
+2023-05-07 11:38:06,211 INFO    : [INFO] External Word Embedding iov count: 37537, oov count: 12463
+2023-05-07 11:38:06,499 INFO    : Namespace(atten_dropout_prob=0.1, batch_size=50, bert_path='bert_features_arxiv', bidirectional=True, cache_dir='cache/arxiv', cuda=True, data_dir='dataset/arxiv', doc_max_timesteps=150, embed_train=False, embedding_path='glove.42B.300d.txt', feat_embed_size=50, ffn_dropout_prob=0.1, ffn_inner_hidden_size=512, gpu='3', grad_clip=True, hidden_size=64, log_root='log_arxiv/', lr=0.0005, lr_descent=True, lstm_hidden_state=128, lstm_layers=2, m=3, max_grad_norm=1.0, model='MTHSG', n_epochs=40, n_feature_size=128, n_head=8, n_iter=1, n_layers=1, recurrent_dropout_prob=0.1, restore_model='None', save_root='models_arxiv', seed=666, sent_max_len=100, use_orthnormal_init=True, vocab_size=50000, word_emb_dim=300, word_embedding=True)
+2023-05-07 11:38:06,642 INFO    : [MODEL] HeterSumGraph 
+2023-05-07 11:38:06,642 INFO    : [INFO] Start reading ExampleSet
+2023-05-07 11:38:07,371 INFO    : [INFO] Finish reading ExampleSet. Total time is 0.729166, Total size is 6439
+2023-05-07 11:38:07,371 INFO    : [INFO] Loading filter word File cache/arxiv/filter_word.txt
+2023-05-07 11:38:09,322 INFO    : [INFO] Loading word2sent TFIDF file from cache/arxiv/test.w2s.tfidf.jsonl!
+2023-05-07 11:38:22,204 INFO    : [INFO] Start reading ExampleSet
+2023-05-07 11:38:22,944 INFO    : [INFO] Finish reading ExampleSet. Total time is 0.739187, Total size is 6436
+2023-05-07 11:38:22,944 INFO    : [INFO] Loading filter word File cache/arxiv/filter_word.txt
+2023-05-07 11:38:24,858 INFO    : [INFO] Loading word2sent TFIDF file from cache/arxiv/val.w2s.tfidf.jsonl!
+2023-05-07 11:38:39,056 INFO    : [INFO] Use cuda
+2023-05-07 11:38:39,057 INFO    : [INFO] Create new model for training...
+2023-05-07 11:38:39,067 INFO    : [INFO] Starting run_training
+2023-05-07 11:39:52,402 INFO    :        | end of iter   0 | time: 16.11s | train loss 1.2181 | 
+2023-05-07 13:41:34,315 INFO    :        | end of iter 100 | time: 13.85s | train loss 11.5098 | 
+2023-05-07 14:15:44,669 INFO    : [INFO] The learning rate now is 0.000250
+2023-05-07 14:15:44,671 INFO    :    | end of epoch   1 | time: 9425.60s | epoch train loss 12.1113 | 
+2023-05-07 14:15:44,673 INFO    : [INFO] Found new best model with 12.111 running_train_loss. Saving to models_arxiv/train/bestmodel
+2023-05-07 14:15:44,758 INFO    : [INFO] Saving model to models_arxiv/train/bestmodel
+2023-05-07 14:15:44,758 INFO    : [INFO] Starting eval for this model ...

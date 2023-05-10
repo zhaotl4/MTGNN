@@ -1,0 +1,2 @@
+
+python train.py --cuda --gpu 3 --data_dir /mnt/data/ztl/MTGNN-SUM/data_tweet/exp_data --cache_dir cache/tweet --embedding_path glove.42B.300d.txt --model MTHSG --save_root models_tweet --log_root log_tweet/ --bert_path bert_features_tweet --lr_descent --grad_clip -m 15 

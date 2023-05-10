@@ -1,0 +1,20 @@
+2023-05-10 09:07:18,504 INFO    : Pytorch 1.13.1
+2023-05-10 09:07:18,504 INFO    : [INFO] Create Vocab, vocab path is cache/tweet/vocab
+2023-05-10 09:07:18,527 INFO    : [INFO] Finished constructing vocabulary of 30754 total words. Last word added: est:
+2023-05-10 09:07:18,582 INFO    : [INFO] Loading external word embedding...
+2023-05-10 09:07:51,981 INFO    : [INFO] External Word Embedding iov count: 23075, oov count: 7679
+2023-05-10 09:07:52,100 INFO    : Namespace(atten_dropout_prob=0.1, batch_size=50, bert_path='bert_features_tweet', bidirectional=True, cache_dir='cache/tweet', cuda=True, data_dir='/mnt/data/ztl/MTGNN-SUM/data_tweet/exp_data', doc_max_timesteps=150, embed_train=False, embedding_path='glove.42B.300d.txt', feat_embed_size=50, ffn_dropout_prob=0.1, ffn_inner_hidden_size=512, gpu='3', grad_clip=True, hidden_size=64, log_root='log_tweet/', lr=0.0005, lr_descent=True, lstm_hidden_state=128, lstm_layers=2, m=15, max_grad_norm=1.0, model='MTHSG', n_epochs=100, n_feature_size=128, n_head=8, n_iter=1, n_layers=1, recurrent_dropout_prob=0.1, restore_model='None', save_root='models_tweet', seed=666, sent_max_len=100, use_orthnormal_init=True, vocab_size=50000, word_emb_dim=300, word_embedding=True)
+2023-05-10 09:07:52,243 INFO    : [MODEL] HeterSumGraph 
+2023-05-10 09:07:52,243 INFO    : [INFO] Start reading ExampleSet
+2023-05-10 09:07:52,252 INFO    : [INFO] Finish reading ExampleSet. Total time is 0.008893, Total size is 9
+2023-05-10 09:07:52,252 INFO    : [INFO] Loading filter word File cache/tweet/filter_word.txt
+2023-05-10 09:07:52,260 INFO    : [INFO] Loading word2sent TFIDF file from cache/tweet/train.w2s.tfidf.jsonl!
+2023-05-10 09:07:52,469 INFO    : [INFO] Start reading ExampleSet
+2023-05-10 09:07:52,470 INFO    : [INFO] Finish reading ExampleSet. Total time is 0.000979, Total size is 1
+2023-05-10 09:07:52,470 INFO    : [INFO] Loading filter word File cache/tweet/filter_word.txt
+2023-05-10 09:07:52,480 INFO    : [INFO] Loading word2sent TFIDF file from cache/tweet/val.w2s.tfidf.jsonl!
+2023-05-10 09:07:53,995 INFO    : [INFO] Use cuda
+2023-05-10 09:07:53,995 INFO    : [INFO] Create new model for training...
+2023-05-10 09:07:54,002 INFO    : [INFO] Starting run_training
+2023-05-10 09:16:38,579 ERROR   : [Error] Caught keyboard interrupt on worker. Stopping supervisor...
+2023-05-10 09:16:38,632 INFO    : [INFO] Saving model to models_tweet/train/earlystop

@@ -1,0 +1,1603 @@
+2023-05-10 07:57:53,868 INFO    : Pytorch 1.13.1
+2023-05-10 07:57:53,868 INFO    : [INFO] Create Vocab, vocab path is cache/tweet/vocab
+2023-05-10 07:57:53,897 INFO    : [INFO] Finished constructing vocabulary of 39393 total words. Last word added: giveaways!
+2023-05-10 07:57:53,966 INFO    : [INFO] Loading external word embedding...
+2023-05-10 07:58:30,272 INFO    : [INFO] External Word Embedding iov count: 29243, oov count: 10150
+2023-05-10 07:58:30,420 INFO    : Namespace(atten_dropout_prob=0.1, batch_size=50, bert_path='bert_features_tweet', bidirectional=True, cache_dir='cache/tweet', cuda=True, data_dir='/mnt/data/ztl/MTGNN-SUM/data_tweet/exp_data', doc_max_timesteps=150, embed_train=False, embedding_path='glove.42B.300d.txt', feat_embed_size=50, ffn_dropout_prob=0.1, ffn_inner_hidden_size=512, gpu='3', grad_clip=True, hidden_size=64, log_root='log_tweet/', lr=0.0005, lr_descent=True, lstm_hidden_state=128, lstm_layers=2, m=15, max_grad_norm=1.0, model='MTHSG', n_epochs=100, n_feature_size=128, n_head=8, n_iter=1, n_layers=1, recurrent_dropout_prob=0.1, restore_model='None', save_root='models_tweet', seed=666, sent_max_len=100, use_orthnormal_init=True, vocab_size=50000, word_emb_dim=300, word_embedding=True)
+2023-05-10 07:58:30,560 INFO    : [MODEL] HeterSumGraph 
+2023-05-10 07:58:30,560 INFO    : [INFO] Start reading ExampleSet
+2023-05-10 07:58:30,573 INFO    : [INFO] Finish reading ExampleSet. Total time is 0.012571, Total size is 12
+2023-05-10 07:58:30,573 INFO    : [INFO] Loading filter word File cache/tweet/filter_word.txt
+2023-05-10 07:58:30,584 INFO    : [INFO] Loading word2sent TFIDF file from cache/tweet/train.w2s.tfidf.jsonl!
+2023-05-10 07:58:30,879 INFO    : [INFO] Start reading ExampleSet
+2023-05-10 07:58:30,880 INFO    : [INFO] Finish reading ExampleSet. Total time is 0.000992, Total size is 1
+2023-05-10 07:58:30,880 INFO    : [INFO] Loading filter word File cache/tweet/filter_word.txt
+2023-05-10 07:58:30,891 INFO    : [INFO] Loading word2sent TFIDF file from cache/tweet/val.w2s.tfidf.jsonl!
+2023-05-10 07:58:32,412 INFO    : [INFO] Use cuda
+2023-05-10 07:58:32,412 INFO    : [INFO] Create new model for training...
+2023-05-10 07:58:32,421 INFO    : [INFO] Starting run_training
+2023-05-10 07:58:49,703 INFO    :        | end of iter   0 | time:  2.97s | train loss 1.2175 | 
+2023-05-10 07:58:49,704 INFO    : [INFO] The learning rate now is 0.000250
+2023-05-10 07:58:50,123 INFO    :    | end of epoch   1 | time: 17.70s | epoch train loss 121.7467 | 
+2023-05-10 07:58:50,123 INFO    : [INFO] Found new best model with 121.747 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 07:58:50,186 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 07:58:50,186 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 07:58:52,321 INFO    : [INFO] End of valid | time:  2.13s | valid loss 23.4618 | 
+2023-05-10 07:58:52,321 INFO    : Rouge1:
+	p:0.335135, r:0.225455, f:0.269565
+Rouge2:
+	p:0.044674, r:0.031175, f:0.036723
+Rougel:
+	p:0.291892, r:0.196364, f:0.234783
+
+2023-05-10 07:58:52,321 INFO    : [INFO] Validset match_true 0, pred 15, true 4, total 150, match 131
+2023-05-10 07:58:52,321 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.873333, precision is 0.000000, recall is 0.000000, F is nan
+2023-05-10 07:58:52,321 INFO    : [INFO] Found new best model with 23.461794 running_avg_loss. The original loss is None, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 07:58:52,630 INFO    : [INFO] Found new best model with nan F. The original F is None, Saving to models_tweet/eval/bestFmodel
+2023-05-10 07:59:08,787 INFO    :        | end of iter   0 | time:  1.17s | train loss 0.3068 | 
+2023-05-10 07:59:08,787 INFO    : [INFO] The learning rate now is 0.000167
+2023-05-10 07:59:08,787 INFO    :    | end of epoch   2 | time: 15.77s | epoch train loss 30.6794 | 
+2023-05-10 07:59:08,787 INFO    : [INFO] Found new best model with 30.679 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 07:59:09,077 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 07:59:09,077 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 07:59:11,203 INFO    : [INFO] End of valid | time:  2.12s | valid loss 22.1283 | 
+2023-05-10 07:59:11,203 INFO    : Rouge1:
+	p:0.336788, r:0.236364, f:0.277778
+Rouge2:
+	p:0.052980, r:0.038369, f:0.044506
+Rougel:
+	p:0.305699, r:0.214545, f:0.252137
+
+2023-05-10 07:59:11,203 INFO    : [INFO] Validset match_true 0, pred 15, true 4, total 150, match 131
+2023-05-10 07:59:11,203 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.873333, precision is 0.000000, recall is 0.000000, F is nan
+2023-05-10 07:59:11,203 INFO    : [INFO] Found new best model with 22.128311 running_avg_loss. The original loss is 23.461794, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 07:59:27,073 INFO    :        | end of iter   0 | time:  1.19s | train loss 0.2881 | 
+2023-05-10 07:59:27,073 INFO    : [INFO] The learning rate now is 0.000125
+2023-05-10 07:59:27,073 INFO    :    | end of epoch   3 | time: 15.63s | epoch train loss 28.8106 | 
+2023-05-10 07:59:27,073 INFO    : [INFO] Found new best model with 28.811 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 07:59:27,329 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 07:59:27,329 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 07:59:29,474 INFO    : [INFO] End of valid | time:  2.14s | valid loss 19.8809 | 
+2023-05-10 07:59:29,474 INFO    : Rouge1:
+	p:0.311005, r:0.236364, f:0.268595
+Rouge2:
+	p:0.055046, r:0.043165, f:0.048387
+Rougel:
+	p:0.282297, r:0.214545, f:0.243802
+
+2023-05-10 07:59:29,474 INFO    : [INFO] Validset match_true 0, pred 15, true 4, total 150, match 131
+2023-05-10 07:59:29,474 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.873333, precision is 0.000000, recall is 0.000000, F is nan
+2023-05-10 07:59:29,474 INFO    : [INFO] Found new best model with 19.880888 running_avg_loss. The original loss is 22.128311, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 07:59:45,064 INFO    :        | end of iter   0 | time:  1.17s | train loss 0.2574 | 
+2023-05-10 07:59:45,064 INFO    : [INFO] The learning rate now is 0.000100
+2023-05-10 07:59:45,064 INFO    :    | end of epoch   4 | time: 15.34s | epoch train loss 25.7408 | 
+2023-05-10 07:59:45,064 INFO    : [INFO] Found new best model with 25.741 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 07:59:45,300 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 07:59:45,300 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 07:59:47,422 INFO    : [INFO] End of valid | time:  2.12s | valid loss 18.4399 | 
+2023-05-10 07:59:47,423 INFO    : Rouge1:
+	p:0.311005, r:0.236364, f:0.268595
+Rouge2:
+	p:0.055046, r:0.043165, f:0.048387
+Rougel:
+	p:0.282297, r:0.214545, f:0.243802
+
+2023-05-10 07:59:47,423 INFO    : [INFO] Validset match_true 0, pred 15, true 4, total 150, match 131
+2023-05-10 07:59:47,423 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.873333, precision is 0.000000, recall is 0.000000, F is nan
+2023-05-10 07:59:47,423 INFO    : [INFO] Found new best model with 18.439898 running_avg_loss. The original loss is 19.880888, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:00:03,057 INFO    :        | end of iter   0 | time:  1.35s | train loss 0.2343 | 
+2023-05-10 08:00:03,057 INFO    : [INFO] The learning rate now is 0.000083
+2023-05-10 08:00:03,057 INFO    :    | end of epoch   5 | time: 15.40s | epoch train loss 23.4310 | 
+2023-05-10 08:00:03,057 INFO    : [INFO] Found new best model with 23.431 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:00:03,279 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:00:03,279 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:00:05,409 INFO    : [INFO] End of valid | time:  2.13s | valid loss 18.3748 | 
+2023-05-10 08:00:05,409 INFO    : Rouge1:
+	p:0.314286, r:0.240000, f:0.272165
+Rouge2:
+	p:0.054711, r:0.043165, f:0.048257
+Rougel:
+	p:0.295238, r:0.225455, f:0.255670
+
+2023-05-10 08:00:05,409 INFO    : [INFO] Validset match_true 0, pred 15, true 4, total 150, match 131
+2023-05-10 08:00:05,410 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.873333, precision is 0.000000, recall is 0.000000, F is nan
+2023-05-10 08:00:05,410 INFO    : [INFO] Found new best model with 18.374760 running_avg_loss. The original loss is 18.439898, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:00:20,921 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2260 | 
+2023-05-10 08:00:20,921 INFO    : [INFO] The learning rate now is 0.000071
+2023-05-10 08:00:20,922 INFO    :    | end of epoch   6 | time: 15.23s | epoch train loss 22.6012 | 
+2023-05-10 08:00:20,922 INFO    : [INFO] Found new best model with 22.601 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:00:21,179 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:00:21,179 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:00:23,283 INFO    : [INFO] End of valid | time:  2.10s | valid loss 19.1165 | 
+2023-05-10 08:00:23,283 INFO    : Rouge1:
+	p:0.349754, r:0.258182, f:0.297071
+Rouge2:
+	p:0.103976, r:0.081535, f:0.091398
+Rougel:
+	p:0.320197, r:0.236364, f:0.271967
+
+2023-05-10 08:00:23,283 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:00:23,283 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:00:38,357 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2295 | 
+2023-05-10 08:00:38,357 INFO    : [INFO] The learning rate now is 0.000063
+2023-05-10 08:00:38,357 INFO    :    | end of epoch   7 | time: 15.07s | epoch train loss 22.9483 | 
+2023-05-10 08:00:38,357 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:00:40,443 INFO    : [INFO] End of valid | time:  2.09s | valid loss 19.5218 | 
+2023-05-10 08:00:40,443 INFO    : Rouge1:
+	p:0.358586, r:0.258182, f:0.300211
+Rouge2:
+	p:0.107692, r:0.083933, f:0.094340
+Rougel:
+	p:0.333333, r:0.240000, f:0.279070
+
+2023-05-10 08:00:40,443 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:00:40,443 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:00:55,428 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2325 | 
+2023-05-10 08:00:55,429 INFO    : [INFO] The learning rate now is 0.000056
+2023-05-10 08:00:55,429 INFO    :    | end of epoch   8 | time: 14.99s | epoch train loss 23.2450 | 
+2023-05-10 08:00:55,429 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:00:57,552 INFO    : [INFO] End of valid | time:  2.12s | valid loss 19.4355 | 
+2023-05-10 08:00:57,552 INFO    : Rouge1:
+	p:0.358586, r:0.258182, f:0.300211
+Rouge2:
+	p:0.107692, r:0.083933, f:0.094340
+Rougel:
+	p:0.333333, r:0.240000, f:0.279070
+
+2023-05-10 08:00:57,552 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:00:57,553 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:01:13,086 INFO    :        | end of iter   0 | time:  1.18s | train loss 0.2309 | 
+2023-05-10 08:01:13,087 INFO    : [INFO] The learning rate now is 0.000050
+2023-05-10 08:01:13,087 INFO    :    | end of epoch   9 | time: 15.53s | epoch train loss 23.0911 | 
+2023-05-10 08:01:13,087 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:01:15,265 INFO    : [INFO] End of valid | time:  2.18s | valid loss 19.0700 | 
+2023-05-10 08:01:15,265 INFO    : Rouge1:
+	p:0.350254, r:0.250909, f:0.292373
+Rouge2:
+	p:0.106383, r:0.083933, f:0.093834
+Rougel:
+	p:0.324873, r:0.232727, f:0.271186
+
+2023-05-10 08:01:15,265 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:01:15,265 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:01:30,476 INFO    :        | end of iter   0 | time:  1.19s | train loss 0.2287 | 
+2023-05-10 08:01:30,476 INFO    : [INFO] The learning rate now is 0.000045
+2023-05-10 08:01:30,476 INFO    :    | end of epoch  10 | time: 15.21s | epoch train loss 22.8667 | 
+2023-05-10 08:01:30,477 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:01:32,834 INFO    : [INFO] End of valid | time:  2.36s | valid loss 18.6410 | 
+2023-05-10 08:01:32,834 INFO    : Rouge1:
+	p:0.350254, r:0.250909, f:0.292373
+Rouge2:
+	p:0.106383, r:0.083933, f:0.093834
+Rougel:
+	p:0.314721, r:0.225455, f:0.262712
+
+2023-05-10 08:01:32,834 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:01:32,834 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:01:47,993 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2268 | 
+2023-05-10 08:01:47,993 INFO    : [INFO] The learning rate now is 0.000042
+2023-05-10 08:01:47,993 INFO    :    | end of epoch  11 | time: 15.16s | epoch train loss 22.6760 | 
+2023-05-10 08:01:47,993 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:01:50,123 INFO    : [INFO] End of valid | time:  2.13s | valid loss 18.2818 | 
+2023-05-10 08:01:50,123 INFO    : Rouge1:
+	p:0.350254, r:0.250909, f:0.292373
+Rouge2:
+	p:0.106383, r:0.083933, f:0.093834
+Rougel:
+	p:0.314721, r:0.225455, f:0.262712
+
+2023-05-10 08:01:50,124 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:01:50,124 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:01:50,124 INFO    : [INFO] Found new best model with 18.281801 running_avg_loss. The original loss is 18.374760, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:02:05,564 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2246 | 
+2023-05-10 08:02:05,564 INFO    : [INFO] The learning rate now is 0.000038
+2023-05-10 08:02:05,564 INFO    :    | end of epoch  12 | time: 15.21s | epoch train loss 22.4596 | 
+2023-05-10 08:02:05,564 INFO    : [INFO] Found new best model with 22.460 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:02:05,815 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:02:05,815 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:02:07,924 INFO    : [INFO] End of valid | time:  2.11s | valid loss 18.0527 | 
+2023-05-10 08:02:07,924 INFO    : Rouge1:
+	p:0.350254, r:0.250909, f:0.292373
+Rouge2:
+	p:0.106383, r:0.083933, f:0.093834
+Rougel:
+	p:0.309645, r:0.221818, f:0.258475
+
+2023-05-10 08:02:07,924 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:02:07,924 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:02:07,924 INFO    : [INFO] Found new best model with 18.052660 running_avg_loss. The original loss is 18.281801, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:02:23,602 INFO    :        | end of iter   0 | time:  1.17s | train loss 0.2246 | 
+2023-05-10 08:02:23,602 INFO    : [INFO] The learning rate now is 0.000036
+2023-05-10 08:02:23,602 INFO    :    | end of epoch  13 | time: 15.36s | epoch train loss 22.4650 | 
+2023-05-10 08:02:23,602 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:02:25,728 INFO    : [INFO] End of valid | time:  2.12s | valid loss 17.9752 | 
+2023-05-10 08:02:25,728 INFO    : Rouge1:
+	p:0.350254, r:0.250909, f:0.292373
+Rouge2:
+	p:0.106383, r:0.083933, f:0.093834
+Rougel:
+	p:0.314721, r:0.225455, f:0.262712
+
+2023-05-10 08:02:25,728 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:02:25,728 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:02:25,728 INFO    : [INFO] Found new best model with 17.975159 running_avg_loss. The original loss is 18.052660, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:02:40,885 INFO    :        | end of iter   0 | time:  1.15s | train loss 0.2259 | 
+2023-05-10 08:02:40,885 INFO    : [INFO] The learning rate now is 0.000033
+2023-05-10 08:02:40,885 INFO    :    | end of epoch  14 | time: 14.93s | epoch train loss 22.5942 | 
+2023-05-10 08:02:40,886 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:02:42,955 INFO    : [INFO] End of valid | time:  2.07s | valid loss 17.9420 | 
+2023-05-10 08:02:42,955 INFO    : Rouge1:
+	p:0.344828, r:0.254545, f:0.292887
+Rouge2:
+	p:0.105740, r:0.083933, f:0.093583
+Rougel:
+	p:0.315271, r:0.232727, f:0.267782
+
+2023-05-10 08:02:42,955 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:02:42,956 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:02:42,956 INFO    : [INFO] Found new best model with 17.942036 running_avg_loss. The original loss is 17.975159, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:02:58,154 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2251 | 
+2023-05-10 08:02:58,155 INFO    : [INFO] The learning rate now is 0.000031
+2023-05-10 08:02:58,155 INFO    :    | end of epoch  15 | time: 14.90s | epoch train loss 22.5069 | 
+2023-05-10 08:02:58,155 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:03:00,249 INFO    : [INFO] End of valid | time:  2.09s | valid loss 17.9217 | 
+2023-05-10 08:03:00,250 INFO    : Rouge1:
+	p:0.344828, r:0.254545, f:0.292887
+Rouge2:
+	p:0.105740, r:0.083933, f:0.093583
+Rougel:
+	p:0.315271, r:0.232727, f:0.267782
+
+2023-05-10 08:03:00,250 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:03:00,250 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:03:00,250 INFO    : [INFO] Found new best model with 17.921736 running_avg_loss. The original loss is 17.942036, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:03:15,538 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2238 | 
+2023-05-10 08:03:15,538 INFO    : [INFO] The learning rate now is 0.000029
+2023-05-10 08:03:15,538 INFO    :    | end of epoch  16 | time: 15.04s | epoch train loss 22.3771 | 
+2023-05-10 08:03:15,538 INFO    : [INFO] Found new best model with 22.377 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:03:15,784 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:03:15,784 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:03:17,883 INFO    : [INFO] End of valid | time:  2.10s | valid loss 17.9125 | 
+2023-05-10 08:03:17,884 INFO    : Rouge1:
+	p:0.344828, r:0.254545, f:0.292887
+Rouge2:
+	p:0.105740, r:0.083933, f:0.093583
+Rougel:
+	p:0.315271, r:0.232727, f:0.267782
+
+2023-05-10 08:03:17,884 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:03:17,884 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:03:17,884 INFO    : [INFO] Found new best model with 17.912516 running_avg_loss. The original loss is 17.921736, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:03:33,004 INFO    :        | end of iter   0 | time:  1.15s | train loss 0.2245 | 
+2023-05-10 08:03:33,004 INFO    : [INFO] The learning rate now is 0.000028
+2023-05-10 08:03:33,004 INFO    :    | end of epoch  17 | time: 14.91s | epoch train loss 22.4525 | 
+2023-05-10 08:03:33,004 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:03:35,095 INFO    : [INFO] End of valid | time:  2.09s | valid loss 17.9241 | 
+2023-05-10 08:03:35,095 INFO    : Rouge1:
+	p:0.344828, r:0.254545, f:0.292887
+Rouge2:
+	p:0.105740, r:0.083933, f:0.093583
+Rougel:
+	p:0.325123, r:0.240000, f:0.276151
+
+2023-05-10 08:03:35,095 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:03:35,095 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:03:50,948 INFO    :        | end of iter   0 | time:  1.18s | train loss 0.2228 | 
+2023-05-10 08:03:50,949 INFO    : [INFO] The learning rate now is 0.000026
+2023-05-10 08:03:50,949 INFO    :    | end of epoch  18 | time: 15.85s | epoch train loss 22.2818 | 
+2023-05-10 08:03:50,949 INFO    : [INFO] Found new best model with 22.282 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:03:51,205 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:03:51,206 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:03:53,355 INFO    : [INFO] End of valid | time:  2.15s | valid loss 17.9682 | 
+2023-05-10 08:03:53,355 INFO    : Rouge1:
+	p:0.344828, r:0.254545, f:0.292887
+Rouge2:
+	p:0.106061, r:0.083933, f:0.093708
+Rougel:
+	p:0.315271, r:0.232727, f:0.267782
+
+2023-05-10 08:03:53,355 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:03:53,355 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:04:08,541 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2232 | 
+2023-05-10 08:04:08,542 INFO    : [INFO] The learning rate now is 0.000025
+2023-05-10 08:04:08,542 INFO    :    | end of epoch  19 | time: 15.19s | epoch train loss 22.3168 | 
+2023-05-10 08:04:08,542 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:04:10,659 INFO    : [INFO] End of valid | time:  2.12s | valid loss 18.0526 | 
+2023-05-10 08:04:10,659 INFO    : Rouge1:
+	p:0.344828, r:0.254545, f:0.292887
+Rouge2:
+	p:0.106061, r:0.083933, f:0.093708
+Rougel:
+	p:0.325123, r:0.240000, f:0.276151
+
+2023-05-10 08:04:10,659 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:04:10,659 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:04:25,885 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2228 | 
+2023-05-10 08:04:25,885 INFO    : [INFO] The learning rate now is 0.000024
+2023-05-10 08:04:25,885 INFO    :    | end of epoch  20 | time: 15.23s | epoch train loss 22.2848 | 
+2023-05-10 08:04:25,885 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:04:27,993 INFO    : [INFO] End of valid | time:  2.11s | valid loss 18.1123 | 
+2023-05-10 08:04:27,994 INFO    : Rouge1:
+	p:0.344828, r:0.254545, f:0.292887
+Rouge2:
+	p:0.106061, r:0.083933, f:0.093708
+Rougel:
+	p:0.325123, r:0.240000, f:0.276151
+
+2023-05-10 08:04:27,994 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:04:27,994 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:04:43,325 INFO    :        | end of iter   0 | time:  1.18s | train loss 0.2230 | 
+2023-05-10 08:04:43,325 INFO    : [INFO] The learning rate now is 0.000023
+2023-05-10 08:04:43,325 INFO    :    | end of epoch  21 | time: 15.33s | epoch train loss 22.3020 | 
+2023-05-10 08:04:43,326 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:04:45,672 INFO    : [INFO] End of valid | time:  2.35s | valid loss 18.1291 | 
+2023-05-10 08:04:45,672 INFO    : Rouge1:
+	p:0.344828, r:0.254545, f:0.292887
+Rouge2:
+	p:0.105740, r:0.083933, f:0.093583
+Rougel:
+	p:0.330049, r:0.243636, f:0.280335
+
+2023-05-10 08:04:45,672 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:04:45,672 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:05:00,826 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2232 | 
+2023-05-10 08:05:00,826 INFO    : [INFO] The learning rate now is 0.000022
+2023-05-10 08:05:00,826 INFO    :    | end of epoch  22 | time: 15.15s | epoch train loss 22.3177 | 
+2023-05-10 08:05:00,826 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:05:02,968 INFO    : [INFO] End of valid | time:  2.14s | valid loss 18.1025 | 
+2023-05-10 08:05:02,968 INFO    : Rouge1:
+	p:0.353535, r:0.254545, f:0.295983
+Rouge2:
+	p:0.105740, r:0.083933, f:0.093583
+Rougel:
+	p:0.333333, r:0.240000, f:0.279070
+
+2023-05-10 08:05:02,968 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:05:02,969 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:05:18,300 INFO    :        | end of iter   0 | time:  1.17s | train loss 0.2230 | 
+2023-05-10 08:05:18,300 INFO    : [INFO] The learning rate now is 0.000021
+2023-05-10 08:05:18,300 INFO    :    | end of epoch  23 | time: 15.33s | epoch train loss 22.2970 | 
+2023-05-10 08:05:18,301 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:05:20,415 INFO    : [INFO] End of valid | time:  2.11s | valid loss 18.0407 | 
+2023-05-10 08:05:20,415 INFO    : Rouge1:
+	p:0.353535, r:0.254545, f:0.295983
+Rouge2:
+	p:0.105740, r:0.083933, f:0.093583
+Rougel:
+	p:0.333333, r:0.240000, f:0.279070
+
+2023-05-10 08:05:20,415 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:05:20,416 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:05:35,305 INFO    :        | end of iter   0 | time:  1.15s | train loss 0.2219 | 
+2023-05-10 08:05:35,306 INFO    : [INFO] The learning rate now is 0.000020
+2023-05-10 08:05:35,306 INFO    :    | end of epoch  24 | time: 14.89s | epoch train loss 22.1935 | 
+2023-05-10 08:05:35,306 INFO    : [INFO] Found new best model with 22.193 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:05:35,588 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:05:35,588 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:05:37,676 INFO    : [INFO] End of valid | time:  2.09s | valid loss 17.9572 | 
+2023-05-10 08:05:37,676 INFO    : Rouge1:
+	p:0.353535, r:0.254545, f:0.295983
+Rouge2:
+	p:0.105740, r:0.083933, f:0.093583
+Rougel:
+	p:0.333333, r:0.240000, f:0.279070
+
+2023-05-10 08:05:37,676 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:05:37,676 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:05:52,639 INFO    :        | end of iter   0 | time:  1.15s | train loss 0.2222 | 
+2023-05-10 08:05:52,639 INFO    : [INFO] The learning rate now is 0.000019
+2023-05-10 08:05:52,639 INFO    :    | end of epoch  25 | time: 14.96s | epoch train loss 22.2163 | 
+2023-05-10 08:05:52,639 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:05:54,721 INFO    : [INFO] End of valid | time:  2.08s | valid loss 17.8659 | 
+2023-05-10 08:05:54,721 INFO    : Rouge1:
+	p:0.353535, r:0.254545, f:0.295983
+Rouge2:
+	p:0.105740, r:0.083933, f:0.093583
+Rougel:
+	p:0.333333, r:0.240000, f:0.279070
+
+2023-05-10 08:05:54,721 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:05:54,721 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:05:54,721 INFO    : [INFO] Found new best model with 17.865889 running_avg_loss. The original loss is 17.912516, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:06:10,166 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2218 | 
+2023-05-10 08:06:10,166 INFO    : [INFO] The learning rate now is 0.000019
+2023-05-10 08:06:10,167 INFO    :    | end of epoch  26 | time: 15.18s | epoch train loss 22.1806 | 
+2023-05-10 08:06:10,167 INFO    : [INFO] Found new best model with 22.181 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:06:10,393 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:06:10,555 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:06:12,700 INFO    : [INFO] End of valid | time:  2.14s | valid loss 17.7932 | 
+2023-05-10 08:06:12,700 INFO    : Rouge1:
+	p:0.353535, r:0.254545, f:0.295983
+Rouge2:
+	p:0.105740, r:0.083933, f:0.093583
+Rougel:
+	p:0.333333, r:0.240000, f:0.279070
+
+2023-05-10 08:06:12,700 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:06:12,701 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:06:12,701 INFO    : [INFO] Found new best model with 17.793159 running_avg_loss. The original loss is 17.865889, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:06:28,337 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2226 | 
+2023-05-10 08:06:28,338 INFO    : [INFO] The learning rate now is 0.000018
+2023-05-10 08:06:28,338 INFO    :    | end of epoch  27 | time: 15.42s | epoch train loss 22.2555 | 
+2023-05-10 08:06:28,338 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:06:30,458 INFO    : [INFO] End of valid | time:  2.12s | valid loss 17.7456 | 
+2023-05-10 08:06:30,458 INFO    : Rouge1:
+	p:0.353535, r:0.254545, f:0.295983
+Rouge2:
+	p:0.105740, r:0.083933, f:0.093583
+Rougel:
+	p:0.333333, r:0.240000, f:0.279070
+
+2023-05-10 08:06:30,458 INFO    : [INFO] Validset match_true 1, pred 15, true 4, total 150, match 133
+2023-05-10 08:06:30,458 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.886667, precision is 0.066667, recall is 0.250000, F is 0.105263
+2023-05-10 08:06:30,458 INFO    : [INFO] Found new best model with 17.745594 running_avg_loss. The original loss is 17.793159, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:06:45,832 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2225 | 
+2023-05-10 08:06:45,833 INFO    : [INFO] The learning rate now is 0.000017
+2023-05-10 08:06:45,833 INFO    :    | end of epoch  28 | time: 15.13s | epoch train loss 22.2533 | 
+2023-05-10 08:06:45,833 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:06:47,947 INFO    : [INFO] End of valid | time:  2.11s | valid loss 17.7157 | 
+2023-05-10 08:06:47,947 INFO    : Rouge1:
+	p:0.400990, r:0.294545, f:0.339623
+Rouge2:
+	p:0.161585, r:0.127098, f:0.142282
+Rougel:
+	p:0.386139, r:0.283636, f:0.327044
+
+2023-05-10 08:06:47,947 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:06:47,947 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:06:47,948 INFO    : [INFO] Found new best model with 17.715660 running_avg_loss. The original loss is 17.745594, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:07:03,451 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2215 | 
+2023-05-10 08:07:03,451 INFO    : [INFO] The learning rate now is 0.000017
+2023-05-10 08:07:03,451 INFO    :    | end of epoch  29 | time: 15.25s | epoch train loss 22.1459 | 
+2023-05-10 08:07:03,451 INFO    : [INFO] Found new best model with 22.146 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:07:03,721 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:07:03,721 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:07:05,840 INFO    : [INFO] End of valid | time:  2.12s | valid loss 17.7002 | 
+2023-05-10 08:07:05,841 INFO    : Rouge1:
+	p:0.400990, r:0.294545, f:0.339623
+Rouge2:
+	p:0.161585, r:0.127098, f:0.142282
+Rougel:
+	p:0.386139, r:0.283636, f:0.327044
+
+2023-05-10 08:07:05,841 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:07:05,841 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:07:05,841 INFO    : [INFO] Found new best model with 17.700190 running_avg_loss. The original loss is 17.715660, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:07:21,215 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2210 | 
+2023-05-10 08:07:21,215 INFO    : [INFO] The learning rate now is 0.000016
+2023-05-10 08:07:21,216 INFO    :    | end of epoch  30 | time: 15.07s | epoch train loss 22.1008 | 
+2023-05-10 08:07:21,216 INFO    : [INFO] Found new best model with 22.101 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:07:21,479 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:07:21,480 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:07:23,567 INFO    : [INFO] End of valid | time:  2.09s | valid loss 17.6982 | 
+2023-05-10 08:07:23,567 INFO    : Rouge1:
+	p:0.400990, r:0.294545, f:0.339623
+Rouge2:
+	p:0.161094, r:0.127098, f:0.142091
+Rougel:
+	p:0.386139, r:0.283636, f:0.327044
+
+2023-05-10 08:07:23,567 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:07:23,568 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:07:23,568 INFO    : [INFO] Found new best model with 17.698193 running_avg_loss. The original loss is 17.700190, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:07:39,160 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2208 | 
+2023-05-10 08:07:39,161 INFO    : [INFO] The learning rate now is 0.000016
+2023-05-10 08:07:39,161 INFO    :    | end of epoch  31 | time: 15.30s | epoch train loss 22.0762 | 
+2023-05-10 08:07:39,161 INFO    : [INFO] Found new best model with 22.076 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:07:39,416 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:07:39,416 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:07:41,546 INFO    : [INFO] End of valid | time:  2.13s | valid loss 17.7069 | 
+2023-05-10 08:07:41,546 INFO    : Rouge1:
+	p:0.400990, r:0.294545, f:0.339623
+Rouge2:
+	p:0.161094, r:0.127098, f:0.142091
+Rougel:
+	p:0.386139, r:0.283636, f:0.327044
+
+2023-05-10 08:07:41,546 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:07:41,546 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:07:56,409 INFO    :        | end of iter   0 | time:  1.15s | train loss 0.2202 | 
+2023-05-10 08:07:56,409 INFO    : [INFO] The learning rate now is 0.000015
+2023-05-10 08:07:56,410 INFO    :    | end of epoch  32 | time: 14.86s | epoch train loss 22.0173 | 
+2023-05-10 08:07:56,410 INFO    : [INFO] Found new best model with 22.017 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:07:56,685 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:07:56,685 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:07:58,889 INFO    : [INFO] End of valid | time:  2.20s | valid loss 17.7114 | 
+2023-05-10 08:07:58,889 INFO    : Rouge1:
+	p:0.400990, r:0.294545, f:0.339623
+Rouge2:
+	p:0.161094, r:0.127098, f:0.142091
+Rougel:
+	p:0.386139, r:0.283636, f:0.327044
+
+2023-05-10 08:07:58,889 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:07:58,889 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:08:13,725 INFO    :        | end of iter   0 | time:  1.15s | train loss 0.2200 | 
+2023-05-10 08:08:13,725 INFO    : [INFO] The learning rate now is 0.000015
+2023-05-10 08:08:13,725 INFO    :    | end of epoch  33 | time: 14.84s | epoch train loss 21.9990 | 
+2023-05-10 08:08:13,725 INFO    : [INFO] Found new best model with 21.999 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:08:14,035 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:08:14,035 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:08:16,152 INFO    : [INFO] End of valid | time:  2.12s | valid loss 17.7002 | 
+2023-05-10 08:08:16,153 INFO    : Rouge1:
+	p:0.400990, r:0.294545, f:0.339623
+Rouge2:
+	p:0.161094, r:0.127098, f:0.142091
+Rougel:
+	p:0.386139, r:0.283636, f:0.327044
+
+2023-05-10 08:08:16,153 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:08:16,153 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:08:31,387 INFO    :        | end of iter   0 | time:  1.17s | train loss 0.2199 | 
+2023-05-10 08:08:31,387 INFO    : [INFO] The learning rate now is 0.000014
+2023-05-10 08:08:31,388 INFO    :    | end of epoch  34 | time: 15.23s | epoch train loss 21.9884 | 
+2023-05-10 08:08:31,388 INFO    : [INFO] Found new best model with 21.988 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:08:31,641 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:08:31,913 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:08:34,016 INFO    : [INFO] End of valid | time:  2.10s | valid loss 17.6724 | 
+2023-05-10 08:08:34,016 INFO    : Rouge1:
+	p:0.400990, r:0.294545, f:0.339623
+Rouge2:
+	p:0.161094, r:0.127098, f:0.142091
+Rougel:
+	p:0.386139, r:0.283636, f:0.327044
+
+2023-05-10 08:08:34,016 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:08:34,016 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:08:34,016 INFO    : [INFO] Found new best model with 17.672358 running_avg_loss. The original loss is 17.698193, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:08:49,330 INFO    :        | end of iter   0 | time:  1.15s | train loss 0.2208 | 
+2023-05-10 08:08:49,330 INFO    : [INFO] The learning rate now is 0.000014
+2023-05-10 08:08:49,330 INFO    :    | end of epoch  35 | time: 15.08s | epoch train loss 22.0768 | 
+2023-05-10 08:08:49,330 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:08:51,431 INFO    : [INFO] End of valid | time:  2.10s | valid loss 17.6301 | 
+2023-05-10 08:08:51,431 INFO    : Rouge1:
+	p:0.400990, r:0.294545, f:0.339623
+Rouge2:
+	p:0.161094, r:0.127098, f:0.142091
+Rougel:
+	p:0.386139, r:0.283636, f:0.327044
+
+2023-05-10 08:08:51,431 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:08:51,432 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:08:51,432 INFO    : [INFO] Found new best model with 17.630096 running_avg_loss. The original loss is 17.672358, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:09:06,787 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2202 | 
+2023-05-10 08:09:06,787 INFO    : [INFO] The learning rate now is 0.000014
+2023-05-10 08:09:06,787 INFO    :    | end of epoch  36 | time: 15.09s | epoch train loss 22.0250 | 
+2023-05-10 08:09:06,788 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:09:08,889 INFO    : [INFO] End of valid | time:  2.10s | valid loss 17.5778 | 
+2023-05-10 08:09:08,889 INFO    : Rouge1:
+	p:0.400990, r:0.294545, f:0.339623
+Rouge2:
+	p:0.161094, r:0.127098, f:0.142091
+Rougel:
+	p:0.386139, r:0.283636, f:0.327044
+
+2023-05-10 08:09:08,889 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:09:08,890 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:09:08,890 INFO    : [INFO] Found new best model with 17.577787 running_avg_loss. The original loss is 17.630096, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:09:24,098 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2187 | 
+2023-05-10 08:09:24,099 INFO    : [INFO] The learning rate now is 0.000013
+2023-05-10 08:09:24,099 INFO    :    | end of epoch  37 | time: 14.99s | epoch train loss 21.8688 | 
+2023-05-10 08:09:24,099 INFO    : [INFO] Found new best model with 21.869 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:09:24,327 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:09:24,327 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:09:26,487 INFO    : [INFO] End of valid | time:  2.16s | valid loss 17.5231 | 
+2023-05-10 08:09:26,487 INFO    : Rouge1:
+	p:0.400990, r:0.294545, f:0.339623
+Rouge2:
+	p:0.161094, r:0.127098, f:0.142091
+Rougel:
+	p:0.386139, r:0.283636, f:0.327044
+
+2023-05-10 08:09:26,487 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:09:26,487 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:09:26,487 INFO    : [INFO] Found new best model with 17.523136 running_avg_loss. The original loss is 17.577787, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:09:41,873 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2190 | 
+2023-05-10 08:09:41,873 INFO    : [INFO] The learning rate now is 0.000013
+2023-05-10 08:09:41,873 INFO    :    | end of epoch  38 | time: 15.11s | epoch train loss 21.8986 | 
+2023-05-10 08:09:41,873 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:09:43,967 INFO    : [INFO] End of valid | time:  2.09s | valid loss 17.4715 | 
+2023-05-10 08:09:43,967 INFO    : Rouge1:
+	p:0.393939, r:0.283636, f:0.329810
+Rouge2:
+	p:0.165109, r:0.127098, f:0.143631
+Rougel:
+	p:0.378788, r:0.272727, f:0.317125
+
+2023-05-10 08:09:43,967 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:09:43,967 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:09:43,967 INFO    : [INFO] Found new best model with 17.471483 running_avg_loss. The original loss is 17.523136, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:09:59,443 INFO    :        | end of iter   0 | time:  1.17s | train loss 0.2183 | 
+2023-05-10 08:09:59,443 INFO    : [INFO] The learning rate now is 0.000013
+2023-05-10 08:09:59,443 INFO    :    | end of epoch  39 | time: 15.17s | epoch train loss 21.8290 | 
+2023-05-10 08:09:59,443 INFO    : [INFO] Found new best model with 21.829 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:09:59,713 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:09:59,714 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:10:01,988 INFO    : [INFO] End of valid | time:  2.27s | valid loss 17.4284 | 
+2023-05-10 08:10:01,988 INFO    : Rouge1:
+	p:0.393939, r:0.283636, f:0.329810
+Rouge2:
+	p:0.165109, r:0.127098, f:0.143631
+Rougel:
+	p:0.378788, r:0.272727, f:0.317125
+
+2023-05-10 08:10:01,988 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:10:01,988 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:10:01,988 INFO    : [INFO] Found new best model with 17.428371 running_avg_loss. The original loss is 17.471483, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:10:17,166 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2190 | 
+2023-05-10 08:10:17,166 INFO    : [INFO] The learning rate now is 0.000012
+2023-05-10 08:10:17,166 INFO    :    | end of epoch  40 | time: 14.93s | epoch train loss 21.8990 | 
+2023-05-10 08:10:17,166 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:10:19,306 INFO    : [INFO] End of valid | time:  2.14s | valid loss 17.3960 | 
+2023-05-10 08:10:19,306 INFO    : Rouge1:
+	p:0.393939, r:0.283636, f:0.329810
+Rouge2:
+	p:0.165109, r:0.127098, f:0.143631
+Rougel:
+	p:0.378788, r:0.272727, f:0.317125
+
+2023-05-10 08:10:19,306 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:10:19,307 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:10:19,307 INFO    : [INFO] Found new best model with 17.395973 running_avg_loss. The original loss is 17.428371, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:10:34,777 INFO    :        | end of iter   0 | time:  1.34s | train loss 0.2187 | 
+2023-05-10 08:10:34,778 INFO    : [INFO] The learning rate now is 0.000012
+2023-05-10 08:10:34,778 INFO    :    | end of epoch  41 | time: 15.21s | epoch train loss 21.8681 | 
+2023-05-10 08:10:34,778 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:10:36,886 INFO    : [INFO] End of valid | time:  2.11s | valid loss 17.3724 | 
+2023-05-10 08:10:36,886 INFO    : Rouge1:
+	p:0.393939, r:0.283636, f:0.329810
+Rouge2:
+	p:0.165109, r:0.127098, f:0.143631
+Rougel:
+	p:0.383838, r:0.276364, f:0.321353
+
+2023-05-10 08:10:36,886 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:10:36,886 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:10:36,887 INFO    : [INFO] Found new best model with 17.372396 running_avg_loss. The original loss is 17.395973, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:10:51,950 INFO    :        | end of iter   0 | time:  1.15s | train loss 0.2179 | 
+2023-05-10 08:10:51,950 INFO    : [INFO] The learning rate now is 0.000012
+2023-05-10 08:10:51,950 INFO    :    | end of epoch  42 | time: 14.81s | epoch train loss 21.7904 | 
+2023-05-10 08:10:51,950 INFO    : [INFO] Found new best model with 21.790 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:10:52,163 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:10:52,163 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:10:54,265 INFO    : [INFO] End of valid | time:  2.10s | valid loss 17.3545 | 
+2023-05-10 08:10:54,265 INFO    : Rouge1:
+	p:0.393939, r:0.283636, f:0.329810
+Rouge2:
+	p:0.165109, r:0.127098, f:0.143631
+Rougel:
+	p:0.383838, r:0.276364, f:0.321353
+
+2023-05-10 08:10:54,266 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:10:54,266 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:10:54,266 INFO    : [INFO] Found new best model with 17.354479 running_avg_loss. The original loss is 17.372396, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:11:09,761 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2185 | 
+2023-05-10 08:11:09,761 INFO    : [INFO] The learning rate now is 0.000011
+2023-05-10 08:11:09,761 INFO    :    | end of epoch  43 | time: 15.25s | epoch train loss 21.8468 | 
+2023-05-10 08:11:09,761 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:11:11,883 INFO    : [INFO] End of valid | time:  2.12s | valid loss 17.3406 | 
+2023-05-10 08:11:11,883 INFO    : Rouge1:
+	p:0.393939, r:0.283636, f:0.329810
+Rouge2:
+	p:0.165109, r:0.127098, f:0.143631
+Rougel:
+	p:0.383838, r:0.276364, f:0.321353
+
+2023-05-10 08:11:11,883 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:11:11,883 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:11:11,883 INFO    : [INFO] Found new best model with 17.340616 running_avg_loss. The original loss is 17.354479, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:11:27,158 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2178 | 
+2023-05-10 08:11:27,158 INFO    : [INFO] The learning rate now is 0.000011
+2023-05-10 08:11:27,158 INFO    :    | end of epoch  44 | time: 15.01s | epoch train loss 21.7826 | 
+2023-05-10 08:11:27,158 INFO    : [INFO] Found new best model with 21.783 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:11:27,439 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:11:27,439 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:11:29,653 INFO    : [INFO] End of valid | time:  2.21s | valid loss 17.3234 | 
+2023-05-10 08:11:29,653 INFO    : Rouge1:
+	p:0.393939, r:0.283636, f:0.329810
+Rouge2:
+	p:0.165109, r:0.127098, f:0.143631
+Rougel:
+	p:0.373737, r:0.269091, f:0.312896
+
+2023-05-10 08:11:29,653 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:11:29,653 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:11:29,653 INFO    : [INFO] Found new best model with 17.323442 running_avg_loss. The original loss is 17.340616, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:11:44,875 INFO    :        | end of iter   0 | time:  1.17s | train loss 0.2177 | 
+2023-05-10 08:11:44,875 INFO    : [INFO] The learning rate now is 0.000011
+2023-05-10 08:11:44,875 INFO    :    | end of epoch  45 | time: 15.01s | epoch train loss 21.7696 | 
+2023-05-10 08:11:44,875 INFO    : [INFO] Found new best model with 21.770 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:11:45,109 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:11:45,109 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:11:47,206 INFO    : [INFO] End of valid | time:  2.10s | valid loss 17.2987 | 
+2023-05-10 08:11:47,207 INFO    : Rouge1:
+	p:0.377551, r:0.269091, f:0.314225
+Rouge2:
+	p:0.145570, r:0.110312, f:0.125512
+Rougel:
+	p:0.357143, r:0.254545, f:0.297240
+
+2023-05-10 08:11:47,207 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:11:47,207 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:11:47,207 INFO    : [INFO] Found new best model with 17.298668 running_avg_loss. The original loss is 17.323442, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:12:02,459 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2169 | 
+2023-05-10 08:12:02,459 INFO    : [INFO] The learning rate now is 0.000011
+2023-05-10 08:12:02,459 INFO    :    | end of epoch  46 | time: 15.03s | epoch train loss 21.6943 | 
+2023-05-10 08:12:02,459 INFO    : [INFO] Found new best model with 21.694 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:12:02,703 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:12:02,703 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:12:05,023 INFO    : [INFO] End of valid | time:  2.32s | valid loss 17.2671 | 
+2023-05-10 08:12:05,024 INFO    : Rouge1:
+	p:0.377551, r:0.269091, f:0.314225
+Rouge2:
+	p:0.145570, r:0.110312, f:0.125512
+Rougel:
+	p:0.357143, r:0.254545, f:0.297240
+
+2023-05-10 08:12:05,024 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:12:05,024 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:12:05,024 INFO    : [INFO] Found new best model with 17.267067 running_avg_loss. The original loss is 17.298668, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:12:20,750 INFO    :        | end of iter   0 | time:  1.17s | train loss 0.2169 | 
+2023-05-10 08:12:20,750 INFO    : [INFO] The learning rate now is 0.000010
+2023-05-10 08:12:20,750 INFO    :    | end of epoch  47 | time: 15.40s | epoch train loss 21.6900 | 
+2023-05-10 08:12:20,751 INFO    : [INFO] Found new best model with 21.690 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:12:20,979 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:12:20,979 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:12:23,081 INFO    : [INFO] End of valid | time:  2.10s | valid loss 17.2276 | 
+2023-05-10 08:12:23,081 INFO    : Rouge1:
+	p:0.377551, r:0.269091, f:0.314225
+Rouge2:
+	p:0.145570, r:0.110312, f:0.125512
+Rougel:
+	p:0.357143, r:0.254545, f:0.297240
+
+2023-05-10 08:12:23,081 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:12:23,081 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:12:23,081 INFO    : [INFO] Found new best model with 17.227592 running_avg_loss. The original loss is 17.267067, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:12:38,473 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2170 | 
+2023-05-10 08:12:38,473 INFO    : [INFO] The learning rate now is 0.000010
+2023-05-10 08:12:38,473 INFO    :    | end of epoch  48 | time: 15.17s | epoch train loss 21.7009 | 
+2023-05-10 08:12:38,473 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:12:40,562 INFO    : [INFO] End of valid | time:  2.09s | valid loss 17.1839 | 
+2023-05-10 08:12:40,562 INFO    : Rouge1:
+	p:0.386139, r:0.283636, f:0.327044
+Rouge2:
+	p:0.142415, r:0.110312, f:0.124324
+Rougel:
+	p:0.366337, r:0.269091, f:0.310273
+
+2023-05-10 08:12:40,562 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:12:40,562 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:12:40,562 INFO    : [INFO] Found new best model with 17.183901 running_avg_loss. The original loss is 17.227592, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:12:55,911 INFO    :        | end of iter   0 | time:  1.15s | train loss 0.2163 | 
+2023-05-10 08:12:55,911 INFO    : [INFO] The learning rate now is 0.000010
+2023-05-10 08:12:55,911 INFO    :    | end of epoch  49 | time: 15.12s | epoch train loss 21.6290 | 
+2023-05-10 08:12:55,911 INFO    : [INFO] Found new best model with 21.629 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:12:56,158 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:12:56,158 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:12:58,265 INFO    : [INFO] End of valid | time:  2.11s | valid loss 17.1396 | 
+2023-05-10 08:12:58,266 INFO    : Rouge1:
+	p:0.386139, r:0.283636, f:0.327044
+Rouge2:
+	p:0.142415, r:0.110312, f:0.124324
+Rougel:
+	p:0.366337, r:0.269091, f:0.310273
+
+2023-05-10 08:12:58,266 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:12:58,266 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:12:58,266 INFO    : [INFO] Found new best model with 17.139616 running_avg_loss. The original loss is 17.183901, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:13:13,511 INFO    :        | end of iter   0 | time:  1.15s | train loss 0.2155 | 
+2023-05-10 08:13:13,511 INFO    : [INFO] The learning rate now is 0.000010
+2023-05-10 08:13:13,511 INFO    :    | end of epoch  50 | time: 15.02s | epoch train loss 21.5499 | 
+2023-05-10 08:13:13,511 INFO    : [INFO] Found new best model with 21.550 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:13:13,742 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:13:13,742 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:13:15,828 INFO    : [INFO] End of valid | time:  2.09s | valid loss 17.0975 | 
+2023-05-10 08:13:15,828 INFO    : Rouge1:
+	p:0.386139, r:0.283636, f:0.327044
+Rouge2:
+	p:0.142415, r:0.110312, f:0.124324
+Rougel:
+	p:0.366337, r:0.269091, f:0.310273
+
+2023-05-10 08:13:15,828 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:13:15,828 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:13:15,829 INFO    : [INFO] Found new best model with 17.097466 running_avg_loss. The original loss is 17.139616, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:13:31,258 INFO    :        | end of iter   0 | time:  1.28s | train loss 0.2161 | 
+2023-05-10 08:13:31,258 INFO    : [INFO] The learning rate now is 0.000010
+2023-05-10 08:13:31,258 INFO    :    | end of epoch  51 | time: 15.18s | epoch train loss 21.6128 | 
+2023-05-10 08:13:31,258 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:13:33,364 INFO    : [INFO] End of valid | time:  2.10s | valid loss 17.0584 | 
+2023-05-10 08:13:33,364 INFO    : Rouge1:
+	p:0.386139, r:0.283636, f:0.327044
+Rouge2:
+	p:0.142415, r:0.110312, f:0.124324
+Rougel:
+	p:0.366337, r:0.269091, f:0.310273
+
+2023-05-10 08:13:33,364 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:13:33,364 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:13:33,364 INFO    : [INFO] Found new best model with 17.058363 running_avg_loss. The original loss is 17.097466, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:13:48,664 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2152 | 
+2023-05-10 08:13:48,665 INFO    : [INFO] The learning rate now is 0.000009
+2023-05-10 08:13:48,665 INFO    :    | end of epoch  52 | time: 15.05s | epoch train loss 21.5223 | 
+2023-05-10 08:13:48,665 INFO    : [INFO] Found new best model with 21.522 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:13:48,898 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:13:48,898 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:13:50,986 INFO    : [INFO] End of valid | time:  2.09s | valid loss 17.0233 | 
+2023-05-10 08:13:50,986 INFO    : Rouge1:
+	p:0.386139, r:0.283636, f:0.327044
+Rouge2:
+	p:0.142415, r:0.110312, f:0.124324
+Rougel:
+	p:0.371287, r:0.272727, f:0.314465
+
+2023-05-10 08:13:50,986 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:13:50,986 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:13:50,986 INFO    : [INFO] Found new best model with 17.023333 running_avg_loss. The original loss is 17.058363, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:14:06,766 INFO    :        | end of iter   0 | time:  1.15s | train loss 0.2150 | 
+2023-05-10 08:14:06,766 INFO    : [INFO] The learning rate now is 0.000009
+2023-05-10 08:14:06,766 INFO    :    | end of epoch  53 | time: 15.51s | epoch train loss 21.5047 | 
+2023-05-10 08:14:06,766 INFO    : [INFO] Found new best model with 21.505 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:14:07,001 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:14:07,001 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:14:09,096 INFO    : [INFO] End of valid | time:  2.09s | valid loss 16.9921 | 
+2023-05-10 08:14:09,096 INFO    : Rouge1:
+	p:0.386139, r:0.283636, f:0.327044
+Rouge2:
+	p:0.142415, r:0.110312, f:0.124324
+Rougel:
+	p:0.376238, r:0.276364, f:0.318658
+
+2023-05-10 08:14:09,096 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:14:09,097 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:14:09,097 INFO    : [INFO] Found new best model with 16.992067 running_avg_loss. The original loss is 17.023333, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:14:24,438 INFO    :        | end of iter   0 | time:  1.18s | train loss 0.2148 | 
+2023-05-10 08:14:24,439 INFO    : [INFO] The learning rate now is 0.000009
+2023-05-10 08:14:24,439 INFO    :    | end of epoch  54 | time: 15.05s | epoch train loss 21.4762 | 
+2023-05-10 08:14:24,439 INFO    : [INFO] Found new best model with 21.476 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:14:24,704 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:14:24,704 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:14:26,895 INFO    : [INFO] End of valid | time:  2.19s | valid loss 16.9644 | 
+2023-05-10 08:14:26,895 INFO    : Rouge1:
+	p:0.386139, r:0.283636, f:0.327044
+Rouge2:
+	p:0.142415, r:0.110312, f:0.124324
+Rougel:
+	p:0.376238, r:0.276364, f:0.318658
+
+2023-05-10 08:14:26,895 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:14:26,895 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:14:26,895 INFO    : [INFO] Found new best model with 16.964407 running_avg_loss. The original loss is 16.992067, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:14:42,412 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2148 | 
+2023-05-10 08:14:42,412 INFO    : [INFO] The learning rate now is 0.000009
+2023-05-10 08:14:42,412 INFO    :    | end of epoch  55 | time: 15.28s | epoch train loss 21.4794 | 
+2023-05-10 08:14:42,412 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:14:44,526 INFO    : [INFO] End of valid | time:  2.11s | valid loss 16.9384 | 
+2023-05-10 08:14:44,526 INFO    : Rouge1:
+	p:0.386139, r:0.283636, f:0.327044
+Rouge2:
+	p:0.142415, r:0.110312, f:0.124324
+Rougel:
+	p:0.376238, r:0.276364, f:0.318658
+
+2023-05-10 08:14:44,527 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:14:44,527 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:14:44,527 INFO    : [INFO] Found new best model with 16.938362 running_avg_loss. The original loss is 16.964407, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:14:59,884 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2143 | 
+2023-05-10 08:14:59,885 INFO    : [INFO] The learning rate now is 0.000009
+2023-05-10 08:14:59,885 INFO    :    | end of epoch  56 | time: 15.12s | epoch train loss 21.4281 | 
+2023-05-10 08:14:59,885 INFO    : [INFO] Found new best model with 21.428 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:15:00,136 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:15:00,137 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:15:02,431 INFO    : [INFO] End of valid | time:  2.29s | valid loss 16.9140 | 
+2023-05-10 08:15:02,431 INFO    : Rouge1:
+	p:0.386139, r:0.283636, f:0.327044
+Rouge2:
+	p:0.142415, r:0.110312, f:0.124324
+Rougel:
+	p:0.366337, r:0.269091, f:0.310273
+
+2023-05-10 08:15:02,431 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:15:02,431 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:15:02,431 INFO    : [INFO] Found new best model with 16.913969 running_avg_loss. The original loss is 16.938362, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:15:17,684 INFO    :        | end of iter   0 | time:  1.17s | train loss 0.2146 | 
+2023-05-10 08:15:17,684 INFO    : [INFO] The learning rate now is 0.000009
+2023-05-10 08:15:17,684 INFO    :    | end of epoch  57 | time: 15.01s | epoch train loss 21.4629 | 
+2023-05-10 08:15:17,684 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:15:19,794 INFO    : [INFO] End of valid | time:  2.11s | valid loss 16.8879 | 
+2023-05-10 08:15:19,794 INFO    : Rouge1:
+	p:0.386139, r:0.283636, f:0.327044
+Rouge2:
+	p:0.142415, r:0.110312, f:0.124324
+Rougel:
+	p:0.366337, r:0.269091, f:0.310273
+
+2023-05-10 08:15:19,794 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:15:19,794 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:15:19,794 INFO    : [INFO] Found new best model with 16.887877 running_avg_loss. The original loss is 16.913969, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:15:35,322 INFO    :        | end of iter   0 | time:  1.15s | train loss 0.2132 | 
+2023-05-10 08:15:35,323 INFO    : [INFO] The learning rate now is 0.000008
+2023-05-10 08:15:35,323 INFO    :    | end of epoch  58 | time: 15.28s | epoch train loss 21.3195 | 
+2023-05-10 08:15:35,323 INFO    : [INFO] Found new best model with 21.319 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:15:35,556 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:15:35,556 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:15:37,644 INFO    : [INFO] End of valid | time:  2.09s | valid loss 16.8597 | 
+2023-05-10 08:15:37,644 INFO    : Rouge1:
+	p:0.386139, r:0.283636, f:0.327044
+Rouge2:
+	p:0.142415, r:0.110312, f:0.124324
+Rougel:
+	p:0.366337, r:0.269091, f:0.310273
+
+2023-05-10 08:15:37,644 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:15:37,644 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:15:37,644 INFO    : [INFO] Found new best model with 16.859745 running_avg_loss. The original loss is 16.887877, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:15:53,102 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2134 | 
+2023-05-10 08:15:53,103 INFO    : [INFO] The learning rate now is 0.000008
+2023-05-10 08:15:53,103 INFO    :    | end of epoch  59 | time: 15.22s | epoch train loss 21.3364 | 
+2023-05-10 08:15:53,103 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:15:55,203 INFO    : [INFO] End of valid | time:  2.10s | valid loss 16.8291 | 
+2023-05-10 08:15:55,203 INFO    : Rouge1:
+	p:0.429268, r:0.320000, f:0.366667
+Rouge2:
+	p:0.195652, r:0.151079, f:0.170501
+Rougel:
+	p:0.404878, r:0.301818, f:0.345833
+
+2023-05-10 08:15:55,203 INFO    : [INFO] Validset match_true 3, pred 15, true 4, total 150, match 137
+2023-05-10 08:15:55,204 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.913333, precision is 0.200000, recall is 0.750000, F is 0.315789
+2023-05-10 08:15:55,204 INFO    : [INFO] Found new best model with 16.829084 running_avg_loss. The original loss is 16.859745, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:16:10,808 INFO    :        | end of iter   0 | time:  1.15s | train loss 0.2133 | 
+2023-05-10 08:16:10,809 INFO    : [INFO] The learning rate now is 0.000008
+2023-05-10 08:16:10,809 INFO    :    | end of epoch  60 | time: 15.26s | epoch train loss 21.3349 | 
+2023-05-10 08:16:10,809 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:16:12,881 INFO    : [INFO] End of valid | time:  2.07s | valid loss 16.7964 | 
+2023-05-10 08:16:12,881 INFO    : Rouge1:
+	p:0.429268, r:0.320000, f:0.366667
+Rouge2:
+	p:0.195652, r:0.151079, f:0.170501
+Rougel:
+	p:0.404878, r:0.301818, f:0.345833
+
+2023-05-10 08:16:12,881 INFO    : [INFO] Validset match_true 3, pred 15, true 4, total 150, match 137
+2023-05-10 08:16:12,881 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.913333, precision is 0.200000, recall is 0.750000, F is 0.315789
+2023-05-10 08:16:12,881 INFO    : [INFO] Found new best model with 16.796362 running_avg_loss. The original loss is 16.829084, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:16:28,588 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2123 | 
+2023-05-10 08:16:28,588 INFO    : [INFO] The learning rate now is 0.000008
+2023-05-10 08:16:28,588 INFO    :    | end of epoch  61 | time: 15.39s | epoch train loss 21.2326 | 
+2023-05-10 08:16:28,588 INFO    : [INFO] Found new best model with 21.233 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:16:28,905 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:16:28,906 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:16:31,044 INFO    : [INFO] End of valid | time:  2.14s | valid loss 16.7601 | 
+2023-05-10 08:16:31,044 INFO    : Rouge1:
+	p:0.429268, r:0.320000, f:0.366667
+Rouge2:
+	p:0.195652, r:0.151079, f:0.170501
+Rougel:
+	p:0.404878, r:0.301818, f:0.345833
+
+2023-05-10 08:16:31,044 INFO    : [INFO] Validset match_true 3, pred 15, true 4, total 150, match 137
+2023-05-10 08:16:31,045 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.913333, precision is 0.200000, recall is 0.750000, F is 0.315789
+2023-05-10 08:16:31,045 INFO    : [INFO] Found new best model with 16.760098 running_avg_loss. The original loss is 16.796362, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:16:46,617 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2126 | 
+2023-05-10 08:16:46,618 INFO    : [INFO] The learning rate now is 0.000008
+2023-05-10 08:16:46,618 INFO    :    | end of epoch  62 | time: 15.21s | epoch train loss 21.2621 | 
+2023-05-10 08:16:46,618 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:16:48,726 INFO    : [INFO] End of valid | time:  2.11s | valid loss 16.7225 | 
+2023-05-10 08:16:48,726 INFO    : Rouge1:
+	p:0.429268, r:0.320000, f:0.366667
+Rouge2:
+	p:0.195652, r:0.151079, f:0.170501
+Rougel:
+	p:0.404878, r:0.301818, f:0.345833
+
+2023-05-10 08:16:48,726 INFO    : [INFO] Validset match_true 3, pred 15, true 4, total 150, match 137
+2023-05-10 08:16:48,726 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.913333, precision is 0.200000, recall is 0.750000, F is 0.315789
+2023-05-10 08:16:48,726 INFO    : [INFO] Found new best model with 16.722500 running_avg_loss. The original loss is 16.760098, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:17:04,317 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2135 | 
+2023-05-10 08:17:04,317 INFO    : [INFO] The learning rate now is 0.000008
+2023-05-10 08:17:04,317 INFO    :    | end of epoch  63 | time: 15.31s | epoch train loss 21.3472 | 
+2023-05-10 08:17:04,317 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:17:06,415 INFO    : [INFO] End of valid | time:  2.10s | valid loss 16.6874 | 
+2023-05-10 08:17:06,415 INFO    : Rouge1:
+	p:0.429268, r:0.320000, f:0.366667
+Rouge2:
+	p:0.195652, r:0.151079, f:0.170501
+Rougel:
+	p:0.404878, r:0.301818, f:0.345833
+
+2023-05-10 08:17:06,416 INFO    : [INFO] Validset match_true 3, pred 15, true 4, total 150, match 137
+2023-05-10 08:17:06,416 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.913333, precision is 0.200000, recall is 0.750000, F is 0.315789
+2023-05-10 08:17:06,416 INFO    : [INFO] Found new best model with 16.687355 running_avg_loss. The original loss is 16.722500, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:17:21,708 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2124 | 
+2023-05-10 08:17:21,709 INFO    : [INFO] The learning rate now is 0.000008
+2023-05-10 08:17:21,709 INFO    :    | end of epoch  64 | time: 14.96s | epoch train loss 21.2379 | 
+2023-05-10 08:17:21,709 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:17:24,017 INFO    : [INFO] End of valid | time:  2.31s | valid loss 16.6541 | 
+2023-05-10 08:17:24,018 INFO    : Rouge1:
+	p:0.429268, r:0.320000, f:0.366667
+Rouge2:
+	p:0.195652, r:0.151079, f:0.170501
+Rougel:
+	p:0.404878, r:0.301818, f:0.345833
+
+2023-05-10 08:17:24,018 INFO    : [INFO] Validset match_true 3, pred 15, true 4, total 150, match 137
+2023-05-10 08:17:24,018 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.913333, precision is 0.200000, recall is 0.750000, F is 0.315789
+2023-05-10 08:17:24,018 INFO    : [INFO] Found new best model with 16.654142 running_avg_loss. The original loss is 16.687355, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:17:39,348 INFO    :        | end of iter   0 | time:  1.17s | train loss 0.2122 | 
+2023-05-10 08:17:39,348 INFO    : [INFO] The learning rate now is 0.000008
+2023-05-10 08:17:39,348 INFO    :    | end of epoch  65 | time: 15.10s | epoch train loss 21.2171 | 
+2023-05-10 08:17:39,348 INFO    : [INFO] Found new best model with 21.217 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:17:39,612 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:17:39,612 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:17:41,745 INFO    : [INFO] End of valid | time:  2.13s | valid loss 16.6236 | 
+2023-05-10 08:17:41,745 INFO    : Rouge1:
+	p:0.429268, r:0.320000, f:0.366667
+Rouge2:
+	p:0.195652, r:0.151079, f:0.170501
+Rougel:
+	p:0.400000, r:0.298182, f:0.341667
+
+2023-05-10 08:17:41,745 INFO    : [INFO] Validset match_true 3, pred 15, true 4, total 150, match 137
+2023-05-10 08:17:41,746 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.913333, precision is 0.200000, recall is 0.750000, F is 0.315789
+2023-05-10 08:17:41,746 INFO    : [INFO] Found new best model with 16.623587 running_avg_loss. The original loss is 16.654142, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:17:56,929 INFO    :        | end of iter   0 | time:  1.28s | train loss 0.2123 | 
+2023-05-10 08:17:56,929 INFO    : [INFO] The learning rate now is 0.000007
+2023-05-10 08:17:56,929 INFO    :    | end of epoch  66 | time: 14.96s | epoch train loss 21.2280 | 
+2023-05-10 08:17:56,929 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:17:59,039 INFO    : [INFO] End of valid | time:  2.11s | valid loss 16.5944 | 
+2023-05-10 08:17:59,039 INFO    : Rouge1:
+	p:0.429268, r:0.320000, f:0.366667
+Rouge2:
+	p:0.195652, r:0.151079, f:0.170501
+Rougel:
+	p:0.400000, r:0.298182, f:0.341667
+
+2023-05-10 08:17:59,040 INFO    : [INFO] Validset match_true 3, pred 15, true 4, total 150, match 137
+2023-05-10 08:17:59,040 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.913333, precision is 0.200000, recall is 0.750000, F is 0.315789
+2023-05-10 08:17:59,040 INFO    : [INFO] Found new best model with 16.594378 running_avg_loss. The original loss is 16.623587, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:18:14,425 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2116 | 
+2023-05-10 08:18:14,426 INFO    : [INFO] The learning rate now is 0.000007
+2023-05-10 08:18:14,426 INFO    :    | end of epoch  67 | time: 15.12s | epoch train loss 21.1557 | 
+2023-05-10 08:18:14,426 INFO    : [INFO] Found new best model with 21.156 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:18:14,645 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:18:14,645 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:18:16,738 INFO    : [INFO] End of valid | time:  2.09s | valid loss 16.5662 | 
+2023-05-10 08:18:16,739 INFO    : Rouge1:
+	p:0.429268, r:0.320000, f:0.366667
+Rouge2:
+	p:0.195652, r:0.151079, f:0.170501
+Rougel:
+	p:0.400000, r:0.298182, f:0.341667
+
+2023-05-10 08:18:16,739 INFO    : [INFO] Validset match_true 3, pred 15, true 4, total 150, match 137
+2023-05-10 08:18:16,739 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.913333, precision is 0.200000, recall is 0.750000, F is 0.315789
+2023-05-10 08:18:16,739 INFO    : [INFO] Found new best model with 16.566164 running_avg_loss. The original loss is 16.594378, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:18:32,461 INFO    :        | end of iter   0 | time:  1.17s | train loss 0.2115 | 
+2023-05-10 08:18:32,462 INFO    : [INFO] The learning rate now is 0.000007
+2023-05-10 08:18:32,462 INFO    :    | end of epoch  68 | time: 15.46s | epoch train loss 21.1481 | 
+2023-05-10 08:18:32,462 INFO    : [INFO] Found new best model with 21.148 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:18:32,668 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:18:32,668 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:18:34,821 INFO    : [INFO] End of valid | time:  2.15s | valid loss 16.5376 | 
+2023-05-10 08:18:34,821 INFO    : Rouge1:
+	p:0.376238, r:0.276364, f:0.318658
+Rouge2:
+	p:0.137931, r:0.105516, f:0.119565
+Rougel:
+	p:0.361386, r:0.265455, f:0.306080
+
+2023-05-10 08:18:34,821 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:18:34,822 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:18:34,822 INFO    : [INFO] Found new best model with 16.537580 running_avg_loss. The original loss is 16.566164, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:18:50,983 INFO    :        | end of iter   0 | time:  1.18s | train loss 0.2111 | 
+2023-05-10 08:18:50,984 INFO    : [INFO] The learning rate now is 0.000007
+2023-05-10 08:18:50,984 INFO    :    | end of epoch  69 | time: 15.92s | epoch train loss 21.1103 | 
+2023-05-10 08:18:50,984 INFO    : [INFO] Found new best model with 21.110 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:18:51,226 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:18:51,226 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:18:53,618 INFO    : [INFO] End of valid | time:  2.39s | valid loss 16.5089 | 
+2023-05-10 08:18:53,618 INFO    : Rouge1:
+	p:0.376238, r:0.276364, f:0.318658
+Rouge2:
+	p:0.137931, r:0.105516, f:0.119565
+Rougel:
+	p:0.361386, r:0.265455, f:0.306080
+
+2023-05-10 08:18:53,618 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:18:53,619 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:18:53,619 INFO    : [INFO] Found new best model with 16.508947 running_avg_loss. The original loss is 16.537580, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:19:09,609 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2113 | 
+2023-05-10 08:19:09,609 INFO    : [INFO] The learning rate now is 0.000007
+2023-05-10 08:19:09,609 INFO    :    | end of epoch  70 | time: 15.73s | epoch train loss 21.1327 | 
+2023-05-10 08:19:09,609 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:19:11,722 INFO    : [INFO] End of valid | time:  2.11s | valid loss 16.4807 | 
+2023-05-10 08:19:11,722 INFO    : Rouge1:
+	p:0.376238, r:0.276364, f:0.318658
+Rouge2:
+	p:0.137931, r:0.105516, f:0.119565
+Rougel:
+	p:0.361386, r:0.265455, f:0.306080
+
+2023-05-10 08:19:11,722 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:19:11,722 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:19:11,723 INFO    : [INFO] Found new best model with 16.480709 running_avg_loss. The original loss is 16.508947, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:19:27,606 INFO    :        | end of iter   0 | time:  1.14s | train loss 0.2103 | 
+2023-05-10 08:19:27,606 INFO    : [INFO] The learning rate now is 0.000007
+2023-05-10 08:19:27,606 INFO    :    | end of epoch  71 | time: 15.68s | epoch train loss 21.0319 | 
+2023-05-10 08:19:27,606 INFO    : [INFO] Found new best model with 21.032 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:19:27,835 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:19:27,836 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:19:29,973 INFO    : [INFO] End of valid | time:  2.14s | valid loss 16.4543 | 
+2023-05-10 08:19:29,973 INFO    : Rouge1:
+	p:0.376238, r:0.276364, f:0.318658
+Rouge2:
+	p:0.137931, r:0.105516, f:0.119565
+Rougel:
+	p:0.361386, r:0.265455, f:0.306080
+
+2023-05-10 08:19:29,973 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:19:29,973 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:19:29,973 INFO    : [INFO] Found new best model with 16.454332 running_avg_loss. The original loss is 16.480709, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:19:45,570 INFO    :        | end of iter   0 | time:  1.14s | train loss 0.2109 | 
+2023-05-10 08:19:45,571 INFO    : [INFO] The learning rate now is 0.000007
+2023-05-10 08:19:45,571 INFO    :    | end of epoch  72 | time: 15.17s | epoch train loss 21.0930 | 
+2023-05-10 08:19:45,571 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:19:47,666 INFO    : [INFO] End of valid | time:  2.10s | valid loss 16.4282 | 
+2023-05-10 08:19:47,667 INFO    : Rouge1:
+	p:0.376238, r:0.276364, f:0.318658
+Rouge2:
+	p:0.137931, r:0.105516, f:0.119565
+Rougel:
+	p:0.351485, r:0.258182, f:0.297694
+
+2023-05-10 08:19:47,667 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:19:47,667 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:19:47,667 INFO    : [INFO] Found new best model with 16.428185 running_avg_loss. The original loss is 16.454332, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:20:03,280 INFO    :        | end of iter   0 | time:  1.20s | train loss 0.2106 | 
+2023-05-10 08:20:03,280 INFO    : [INFO] The learning rate now is 0.000007
+2023-05-10 08:20:03,281 INFO    :    | end of epoch  73 | time: 15.26s | epoch train loss 21.0622 | 
+2023-05-10 08:20:03,281 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:20:05,410 INFO    : [INFO] End of valid | time:  2.13s | valid loss 16.4017 | 
+2023-05-10 08:20:05,410 INFO    : Rouge1:
+	p:0.376238, r:0.276364, f:0.318658
+Rouge2:
+	p:0.137931, r:0.105516, f:0.119565
+Rougel:
+	p:0.356436, r:0.261818, f:0.301887
+
+2023-05-10 08:20:05,410 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:20:05,410 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:20:05,410 INFO    : [INFO] Found new best model with 16.401701 running_avg_loss. The original loss is 16.428185, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:20:20,874 INFO    :        | end of iter   0 | time:  1.14s | train loss 0.2105 | 
+2023-05-10 08:20:20,874 INFO    : [INFO] The learning rate now is 0.000007
+2023-05-10 08:20:20,874 INFO    :    | end of epoch  74 | time: 15.27s | epoch train loss 21.0460 | 
+2023-05-10 08:20:20,874 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:20:23,177 INFO    : [INFO] End of valid | time:  2.30s | valid loss 16.3755 | 
+2023-05-10 08:20:23,177 INFO    : Rouge1:
+	p:0.376238, r:0.276364, f:0.318658
+Rouge2:
+	p:0.137931, r:0.105516, f:0.119565
+Rougel:
+	p:0.356436, r:0.261818, f:0.301887
+
+2023-05-10 08:20:23,177 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:20:23,177 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:20:23,177 INFO    : [INFO] Found new best model with 16.375473 running_avg_loss. The original loss is 16.401701, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:20:38,719 INFO    :        | end of iter   0 | time:  1.14s | train loss 0.2098 | 
+2023-05-10 08:20:38,719 INFO    : [INFO] The learning rate now is 0.000007
+2023-05-10 08:20:38,719 INFO    :    | end of epoch  75 | time: 15.14s | epoch train loss 20.9779 | 
+2023-05-10 08:20:38,719 INFO    : [INFO] Found new best model with 20.978 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:20:38,933 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:20:38,933 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:20:41,058 INFO    : [INFO] End of valid | time:  2.12s | valid loss 16.3497 | 
+2023-05-10 08:20:41,058 INFO    : Rouge1:
+	p:0.376238, r:0.276364, f:0.318658
+Rouge2:
+	p:0.137931, r:0.105516, f:0.119565
+Rougel:
+	p:0.356436, r:0.261818, f:0.301887
+
+2023-05-10 08:20:41,058 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:20:41,058 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:20:41,058 INFO    : [INFO] Found new best model with 16.349678 running_avg_loss. The original loss is 16.375473, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:20:56,520 INFO    :        | end of iter   0 | time:  1.14s | train loss 0.2094 | 
+2023-05-10 08:20:56,520 INFO    : [INFO] The learning rate now is 0.000006
+2023-05-10 08:20:56,520 INFO    :    | end of epoch  76 | time: 15.24s | epoch train loss 20.9351 | 
+2023-05-10 08:20:56,520 INFO    : [INFO] Found new best model with 20.935 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:20:56,744 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:20:56,744 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:20:58,844 INFO    : [INFO] End of valid | time:  2.10s | valid loss 16.3227 | 
+2023-05-10 08:20:58,844 INFO    : Rouge1:
+	p:0.376238, r:0.276364, f:0.318658
+Rouge2:
+	p:0.137931, r:0.105516, f:0.119565
+Rougel:
+	p:0.356436, r:0.261818, f:0.301887
+
+2023-05-10 08:20:58,844 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:20:58,844 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:20:58,844 INFO    : [INFO] Found new best model with 16.322729 running_avg_loss. The original loss is 16.349678, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:21:14,150 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2098 | 
+2023-05-10 08:21:14,150 INFO    : [INFO] The learning rate now is 0.000006
+2023-05-10 08:21:14,150 INFO    :    | end of epoch  77 | time: 15.08s | epoch train loss 20.9783 | 
+2023-05-10 08:21:14,150 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:21:16,267 INFO    : [INFO] End of valid | time:  2.12s | valid loss 16.2959 | 
+2023-05-10 08:21:16,267 INFO    : Rouge1:
+	p:0.376238, r:0.276364, f:0.318658
+Rouge2:
+	p:0.137931, r:0.105516, f:0.119565
+Rougel:
+	p:0.356436, r:0.261818, f:0.301887
+
+2023-05-10 08:21:16,267 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:21:16,267 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:21:16,267 INFO    : [INFO] Found new best model with 16.295864 running_avg_loss. The original loss is 16.322729, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:21:31,736 INFO    :        | end of iter   0 | time:  1.14s | train loss 0.2093 | 
+2023-05-10 08:21:31,737 INFO    : [INFO] The learning rate now is 0.000006
+2023-05-10 08:21:31,737 INFO    :    | end of epoch  78 | time: 15.20s | epoch train loss 20.9252 | 
+2023-05-10 08:21:31,737 INFO    : [INFO] Found new best model with 20.925 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:21:31,983 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:21:31,983 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:21:34,100 INFO    : [INFO] End of valid | time:  2.12s | valid loss 16.2687 | 
+2023-05-10 08:21:34,101 INFO    : Rouge1:
+	p:0.376238, r:0.276364, f:0.318658
+Rouge2:
+	p:0.137931, r:0.105516, f:0.119565
+Rougel:
+	p:0.356436, r:0.261818, f:0.301887
+
+2023-05-10 08:21:34,101 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:21:34,101 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:21:34,101 INFO    : [INFO] Found new best model with 16.268658 running_avg_loss. The original loss is 16.295864, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:21:49,295 INFO    :        | end of iter   0 | time:  1.14s | train loss 0.2086 | 
+2023-05-10 08:21:49,296 INFO    : [INFO] The learning rate now is 0.000006
+2023-05-10 08:21:49,296 INFO    :    | end of epoch  79 | time: 14.94s | epoch train loss 20.8581 | 
+2023-05-10 08:21:49,296 INFO    : [INFO] Found new best model with 20.858 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:21:49,515 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:21:49,516 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:21:51,614 INFO    : [INFO] End of valid | time:  2.10s | valid loss 16.2419 | 
+2023-05-10 08:21:51,615 INFO    : Rouge1:
+	p:0.376238, r:0.276364, f:0.318658
+Rouge2:
+	p:0.137931, r:0.105516, f:0.119565
+Rougel:
+	p:0.356436, r:0.261818, f:0.301887
+
+2023-05-10 08:21:51,615 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:21:51,615 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:21:51,615 INFO    : [INFO] Found new best model with 16.241920 running_avg_loss. The original loss is 16.268658, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:22:07,094 INFO    :        | end of iter   0 | time:  1.14s | train loss 0.2087 | 
+2023-05-10 08:22:07,094 INFO    : [INFO] The learning rate now is 0.000006
+2023-05-10 08:22:07,094 INFO    :    | end of epoch  80 | time: 15.25s | epoch train loss 20.8739 | 
+2023-05-10 08:22:07,094 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:22:09,190 INFO    : [INFO] End of valid | time:  2.09s | valid loss 16.2156 | 
+2023-05-10 08:22:09,190 INFO    : Rouge1:
+	p:0.377451, r:0.280000, f:0.321503
+Rouge2:
+	p:0.138801, r:0.105516, f:0.119891
+Rougel:
+	p:0.352941, r:0.261818, f:0.300626
+
+2023-05-10 08:22:09,190 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:22:09,190 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:22:09,190 INFO    : [INFO] Found new best model with 16.215626 running_avg_loss. The original loss is 16.241920, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:22:24,582 INFO    :        | end of iter   0 | time:  1.14s | train loss 0.2088 | 
+2023-05-10 08:22:24,583 INFO    : [INFO] The learning rate now is 0.000006
+2023-05-10 08:22:24,583 INFO    :    | end of epoch  81 | time: 15.12s | epoch train loss 20.8767 | 
+2023-05-10 08:22:24,583 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:22:26,733 INFO    : [INFO] End of valid | time:  2.15s | valid loss 16.1903 | 
+2023-05-10 08:22:26,733 INFO    : Rouge1:
+	p:0.377451, r:0.280000, f:0.321503
+Rouge2:
+	p:0.138801, r:0.105516, f:0.119891
+Rougel:
+	p:0.352941, r:0.261818, f:0.300626
+
+2023-05-10 08:22:26,733 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:22:26,733 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:22:26,733 INFO    : [INFO] Found new best model with 16.190350 running_avg_loss. The original loss is 16.215626, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:22:42,428 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2082 | 
+2023-05-10 08:22:42,428 INFO    : [INFO] The learning rate now is 0.000006
+2023-05-10 08:22:42,428 INFO    :    | end of epoch  82 | time: 15.34s | epoch train loss 20.8182 | 
+2023-05-10 08:22:42,428 INFO    : [INFO] Found new best model with 20.818 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:22:42,816 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:22:42,816 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:22:44,922 INFO    : [INFO] End of valid | time:  2.11s | valid loss 16.1653 | 
+2023-05-10 08:22:44,922 INFO    : Rouge1:
+	p:0.377451, r:0.280000, f:0.321503
+Rouge2:
+	p:0.138801, r:0.105516, f:0.119891
+Rougel:
+	p:0.352941, r:0.261818, f:0.300626
+
+2023-05-10 08:22:44,922 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:22:44,922 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:22:44,922 INFO    : [INFO] Found new best model with 16.165323 running_avg_loss. The original loss is 16.190350, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:23:00,525 INFO    :        | end of iter   0 | time:  1.33s | train loss 0.2084 | 
+2023-05-10 08:23:00,525 INFO    : [INFO] The learning rate now is 0.000006
+2023-05-10 08:23:00,525 INFO    :    | end of epoch  83 | time: 15.26s | epoch train loss 20.8377 | 
+2023-05-10 08:23:00,525 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:23:02,628 INFO    : [INFO] End of valid | time:  2.10s | valid loss 16.1409 | 
+2023-05-10 08:23:02,628 INFO    : Rouge1:
+	p:0.384615, r:0.272727, f:0.319149
+Rouge2:
+	p:0.138710, r:0.103118, f:0.118294
+Rougel:
+	p:0.338462, r:0.240000, f:0.280851
+
+2023-05-10 08:23:02,628 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:23:02,628 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:23:02,628 INFO    : [INFO] Found new best model with 16.140944 running_avg_loss. The original loss is 16.165323, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:23:17,953 INFO    :        | end of iter   0 | time:  1.14s | train loss 0.2081 | 
+2023-05-10 08:23:17,953 INFO    : [INFO] The learning rate now is 0.000006
+2023-05-10 08:23:17,953 INFO    :    | end of epoch  84 | time: 15.11s | epoch train loss 20.8145 | 
+2023-05-10 08:23:17,953 INFO    : [INFO] Found new best model with 20.815 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:23:18,230 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:23:18,231 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:23:20,321 INFO    : [INFO] End of valid | time:  2.09s | valid loss 16.1173 | 
+2023-05-10 08:23:20,321 INFO    : Rouge1:
+	p:0.384615, r:0.272727, f:0.319149
+Rouge2:
+	p:0.138710, r:0.103118, f:0.118294
+Rougel:
+	p:0.338462, r:0.240000, f:0.280851
+
+2023-05-10 08:23:20,321 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:23:20,321 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:23:20,321 INFO    : [INFO] Found new best model with 16.117350 running_avg_loss. The original loss is 16.140944, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:23:35,782 INFO    :        | end of iter   0 | time:  1.15s | train loss 0.2071 | 
+2023-05-10 08:23:35,782 INFO    : [INFO] The learning rate now is 0.000006
+2023-05-10 08:23:35,782 INFO    :    | end of epoch  85 | time: 15.20s | epoch train loss 20.7148 | 
+2023-05-10 08:23:35,782 INFO    : [INFO] Found new best model with 20.715 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:23:36,043 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:23:36,043 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:23:38,142 INFO    : [INFO] End of valid | time:  2.10s | valid loss 16.0958 | 
+2023-05-10 08:23:38,142 INFO    : Rouge1:
+	p:0.384615, r:0.272727, f:0.319149
+Rouge2:
+	p:0.138710, r:0.103118, f:0.118294
+Rougel:
+	p:0.338462, r:0.240000, f:0.280851
+
+2023-05-10 08:23:38,142 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:23:38,142 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:23:38,142 INFO    : [INFO] Found new best model with 16.095802 running_avg_loss. The original loss is 16.117350, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:23:53,260 INFO    :        | end of iter   0 | time:  1.13s | train loss 0.2075 | 
+2023-05-10 08:23:53,260 INFO    : [INFO] The learning rate now is 0.000006
+2023-05-10 08:23:53,261 INFO    :    | end of epoch  86 | time: 14.90s | epoch train loss 20.7493 | 
+2023-05-10 08:23:53,261 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:23:55,523 INFO    : [INFO] End of valid | time:  2.26s | valid loss 16.0745 | 
+2023-05-10 08:23:55,524 INFO    : Rouge1:
+	p:0.384615, r:0.272727, f:0.319149
+Rouge2:
+	p:0.138710, r:0.103118, f:0.118294
+Rougel:
+	p:0.343590, r:0.243636, f:0.285106
+
+2023-05-10 08:23:55,524 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:23:55,524 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:23:55,524 INFO    : [INFO] Found new best model with 16.074541 running_avg_loss. The original loss is 16.095802, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:24:10,760 INFO    :        | end of iter   0 | time:  1.14s | train loss 0.2065 | 
+2023-05-10 08:24:10,760 INFO    : [INFO] The learning rate now is 0.000006
+2023-05-10 08:24:10,760 INFO    :    | end of epoch  87 | time: 14.99s | epoch train loss 20.6540 | 
+2023-05-10 08:24:10,760 INFO    : [INFO] Found new best model with 20.654 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:24:11,024 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:24:11,024 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:24:13,124 INFO    : [INFO] End of valid | time:  2.10s | valid loss 16.0544 | 
+2023-05-10 08:24:13,125 INFO    : Rouge1:
+	p:0.384615, r:0.272727, f:0.319149
+Rouge2:
+	p:0.138710, r:0.103118, f:0.118294
+Rougel:
+	p:0.343590, r:0.243636, f:0.285106
+
+2023-05-10 08:24:13,125 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:24:13,125 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:24:13,125 INFO    : [INFO] Found new best model with 16.054384 running_avg_loss. The original loss is 16.074541, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:24:28,625 INFO    :        | end of iter   0 | time:  1.16s | train loss 0.2077 | 
+2023-05-10 08:24:28,626 INFO    : [INFO] The learning rate now is 0.000006
+2023-05-10 08:24:28,626 INFO    :    | end of epoch  88 | time: 15.22s | epoch train loss 20.7748 | 
+2023-05-10 08:24:28,626 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:24:30,937 INFO    : [INFO] End of valid | time:  2.31s | valid loss 16.0333 | 
+2023-05-10 08:24:30,937 INFO    : Rouge1:
+	p:0.384615, r:0.272727, f:0.319149
+Rouge2:
+	p:0.138710, r:0.103118, f:0.118294
+Rougel:
+	p:0.348718, r:0.247273, f:0.289362
+
+2023-05-10 08:24:30,937 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:24:30,937 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:24:30,937 INFO    : [INFO] Found new best model with 16.033312 running_avg_loss. The original loss is 16.054384, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:24:46,423 INFO    :        | end of iter   0 | time:  1.13s | train loss 0.2065 | 
+2023-05-10 08:24:46,424 INFO    : [INFO] The learning rate now is 0.000006
+2023-05-10 08:24:46,424 INFO    :    | end of epoch  89 | time: 15.24s | epoch train loss 20.6455 | 
+2023-05-10 08:24:46,424 INFO    : [INFO] Found new best model with 20.646 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:24:46,659 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:24:46,659 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:24:48,737 INFO    : [INFO] End of valid | time:  2.08s | valid loss 16.0124 | 
+2023-05-10 08:24:48,737 INFO    : Rouge1:
+	p:0.384615, r:0.272727, f:0.319149
+Rouge2:
+	p:0.138710, r:0.103118, f:0.118294
+Rougel:
+	p:0.353846, r:0.250909, f:0.293617
+
+2023-05-10 08:24:48,737 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:24:48,737 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:24:48,737 INFO    : [INFO] Found new best model with 16.012398 running_avg_loss. The original loss is 16.033312, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:25:04,342 INFO    :        | end of iter   0 | time:  1.14s | train loss 0.2068 | 
+2023-05-10 08:25:04,342 INFO    : [INFO] The learning rate now is 0.000005
+2023-05-10 08:25:04,342 INFO    :    | end of epoch  90 | time: 15.33s | epoch train loss 20.6769 | 
+2023-05-10 08:25:04,343 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:25:06,421 INFO    : [INFO] End of valid | time:  2.08s | valid loss 15.9918 | 
+2023-05-10 08:25:06,421 INFO    : Rouge1:
+	p:0.384615, r:0.272727, f:0.319149
+Rouge2:
+	p:0.138710, r:0.103118, f:0.118294
+Rougel:
+	p:0.353846, r:0.250909, f:0.293617
+
+2023-05-10 08:25:06,421 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:25:06,421 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:25:06,421 INFO    : [INFO] Found new best model with 15.991831 running_avg_loss. The original loss is 16.012398, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:25:21,962 INFO    :        | end of iter   0 | time:  1.14s | train loss 0.2071 | 
+2023-05-10 08:25:21,963 INFO    : [INFO] The learning rate now is 0.000005
+2023-05-10 08:25:21,963 INFO    :    | end of epoch  91 | time: 15.22s | epoch train loss 20.7091 | 
+2023-05-10 08:25:21,963 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:25:24,054 INFO    : [INFO] End of valid | time:  2.09s | valid loss 15.9713 | 
+2023-05-10 08:25:24,054 INFO    : Rouge1:
+	p:0.384615, r:0.272727, f:0.319149
+Rouge2:
+	p:0.138710, r:0.103118, f:0.118294
+Rougel:
+	p:0.353846, r:0.250909, f:0.293617
+
+2023-05-10 08:25:24,054 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:25:24,055 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:25:24,055 INFO    : [INFO] Found new best model with 15.971304 running_avg_loss. The original loss is 15.991831, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:25:39,367 INFO    :        | end of iter   0 | time:  1.14s | train loss 0.2061 | 
+2023-05-10 08:25:39,367 INFO    : [INFO] The learning rate now is 0.000005
+2023-05-10 08:25:39,367 INFO    :    | end of epoch  92 | time: 15.05s | epoch train loss 20.6139 | 
+2023-05-10 08:25:39,367 INFO    : [INFO] Found new best model with 20.614 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:25:39,581 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:25:39,581 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:25:41,669 INFO    : [INFO] End of valid | time:  2.09s | valid loss 15.9518 | 
+2023-05-10 08:25:41,669 INFO    : Rouge1:
+	p:0.384615, r:0.272727, f:0.319149
+Rouge2:
+	p:0.138710, r:0.103118, f:0.118294
+Rougel:
+	p:0.353846, r:0.250909, f:0.293617
+
+2023-05-10 08:25:41,669 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:25:41,669 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:25:41,669 INFO    : [INFO] Found new best model with 15.951770 running_avg_loss. The original loss is 15.971304, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:25:56,911 INFO    :        | end of iter   0 | time:  1.14s | train loss 0.2058 | 
+2023-05-10 08:25:56,912 INFO    : [INFO] The learning rate now is 0.000005
+2023-05-10 08:25:56,912 INFO    :    | end of epoch  93 | time: 14.95s | epoch train loss 20.5767 | 
+2023-05-10 08:25:56,912 INFO    : [INFO] Found new best model with 20.577 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:25:57,144 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:25:57,348 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:25:59,598 INFO    : [INFO] End of valid | time:  2.25s | valid loss 15.9328 | 
+2023-05-10 08:25:59,598 INFO    : Rouge1:
+	p:0.384615, r:0.272727, f:0.319149
+Rouge2:
+	p:0.138710, r:0.103118, f:0.118294
+Rougel:
+	p:0.353846, r:0.250909, f:0.293617
+
+2023-05-10 08:25:59,598 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:25:59,598 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:25:59,598 INFO    : [INFO] Found new best model with 15.932798 running_avg_loss. The original loss is 15.951770, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:26:14,750 INFO    :        | end of iter   0 | time:  1.14s | train loss 0.2063 | 
+2023-05-10 08:26:14,751 INFO    : [INFO] The learning rate now is 0.000005
+2023-05-10 08:26:14,751 INFO    :    | end of epoch  94 | time: 14.92s | epoch train loss 20.6306 | 
+2023-05-10 08:26:14,751 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:26:16,832 INFO    : [INFO] End of valid | time:  2.08s | valid loss 15.9137 | 
+2023-05-10 08:26:16,832 INFO    : Rouge1:
+	p:0.384615, r:0.272727, f:0.319149
+Rouge2:
+	p:0.138710, r:0.103118, f:0.118294
+Rougel:
+	p:0.353846, r:0.250909, f:0.293617
+
+2023-05-10 08:26:16,832 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:26:16,832 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:26:16,832 INFO    : [INFO] Found new best model with 15.913744 running_avg_loss. The original loss is 15.932798, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:26:32,427 INFO    :        | end of iter   0 | time:  1.33s | train loss 0.2053 | 
+2023-05-10 08:26:32,428 INFO    : [INFO] The learning rate now is 0.000005
+2023-05-10 08:26:32,428 INFO    :    | end of epoch  95 | time: 15.02s | epoch train loss 20.5261 | 
+2023-05-10 08:26:32,428 INFO    : [INFO] Found new best model with 20.526 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:26:32,669 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:26:32,669 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:26:34,755 INFO    : [INFO] End of valid | time:  2.09s | valid loss 15.8938 | 
+2023-05-10 08:26:34,755 INFO    : Rouge1:
+	p:0.384615, r:0.272727, f:0.319149
+Rouge2:
+	p:0.138710, r:0.103118, f:0.118294
+Rougel:
+	p:0.353846, r:0.250909, f:0.293617
+
+2023-05-10 08:26:34,755 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:26:34,756 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:26:34,756 INFO    : [INFO] Found new best model with 15.893772 running_avg_loss. The original loss is 15.913744, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:26:50,237 INFO    :        | end of iter   0 | time:  1.15s | train loss 0.2045 | 
+2023-05-10 08:26:50,238 INFO    : [INFO] The learning rate now is 0.000005
+2023-05-10 08:26:50,238 INFO    :    | end of epoch  96 | time: 15.20s | epoch train loss 20.4510 | 
+2023-05-10 08:26:50,238 INFO    : [INFO] Found new best model with 20.451 running_train_loss. Saving to models_tweet/train/bestmodel
+2023-05-10 08:26:50,552 INFO    : [INFO] Saving model to models_tweet/train/bestmodel
+2023-05-10 08:26:50,552 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:26:52,656 INFO    : [INFO] End of valid | time:  2.10s | valid loss 15.8743 | 
+2023-05-10 08:26:52,656 INFO    : Rouge1:
+	p:0.384615, r:0.272727, f:0.319149
+Rouge2:
+	p:0.138710, r:0.103118, f:0.118294
+Rougel:
+	p:0.348718, r:0.247273, f:0.289362
+
+2023-05-10 08:26:52,656 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:26:52,656 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:26:52,656 INFO    : [INFO] Found new best model with 15.874255 running_avg_loss. The original loss is 15.893772, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:27:08,070 INFO    :        | end of iter   0 | time:  1.15s | train loss 0.2048 | 
+2023-05-10 08:27:08,070 INFO    : [INFO] The learning rate now is 0.000005
+2023-05-10 08:27:08,070 INFO    :    | end of epoch  97 | time: 15.11s | epoch train loss 20.4767 | 
+2023-05-10 08:27:08,070 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:27:10,146 INFO    : [INFO] End of valid | time:  2.08s | valid loss 15.8546 | 
+2023-05-10 08:27:10,146 INFO    : Rouge1:
+	p:0.384615, r:0.272727, f:0.319149
+Rouge2:
+	p:0.138710, r:0.103118, f:0.118294
+Rougel:
+	p:0.348718, r:0.247273, f:0.289362
+
+2023-05-10 08:27:10,146 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:27:10,147 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:27:10,147 INFO    : [INFO] Found new best model with 15.854628 running_avg_loss. The original loss is 15.874255, Saving to models_tweet/eval/bestmodel_2
+2023-05-10 08:27:25,493 INFO    :        | end of iter   0 | time:  1.19s | train loss 0.2052 | 
+2023-05-10 08:27:25,493 INFO    : [INFO] The learning rate now is 0.000005
+2023-05-10 08:27:25,493 INFO    :    | end of epoch  98 | time: 15.10s | epoch train loss 20.5167 | 
+2023-05-10 08:27:25,493 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:27:27,581 INFO    : [INFO] End of valid | time:  2.09s | valid loss 15.8344 | 
+2023-05-10 08:27:27,581 INFO    : Rouge1:
+	p:0.384615, r:0.272727, f:0.319149
+Rouge2:
+	p:0.138710, r:0.103118, f:0.118294
+Rougel:
+	p:0.348718, r:0.247273, f:0.289362
+
+2023-05-10 08:27:27,581 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:27:27,582 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:27:27,582 INFO    : [INFO] Found new best model with 15.834373 running_avg_loss. The original loss is 15.854628, Saving to models_tweet/eval/bestmodel_0
+2023-05-10 08:27:43,505 INFO    :        | end of iter   0 | time:  1.19s | train loss 0.2055 | 
+2023-05-10 08:27:43,505 INFO    : [INFO] The learning rate now is 0.000005
+2023-05-10 08:27:43,505 INFO    :    | end of epoch  99 | time: 15.63s | epoch train loss 20.5466 | 
+2023-05-10 08:27:43,505 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:27:45,696 INFO    : [INFO] End of valid | time:  2.19s | valid loss 15.8147 | 
+2023-05-10 08:27:45,696 INFO    : Rouge1:
+	p:0.384615, r:0.272727, f:0.319149
+Rouge2:
+	p:0.138710, r:0.103118, f:0.118294
+Rougel:
+	p:0.348718, r:0.247273, f:0.289362
+
+2023-05-10 08:27:45,696 INFO    : [INFO] Validset match_true 2, pred 15, true 4, total 150, match 135
+2023-05-10 08:27:45,697 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.900000, precision is 0.133333, recall is 0.500000, F is 0.210526
+2023-05-10 08:27:45,697 INFO    : [INFO] Found new best model with 15.814747 running_avg_loss. The original loss is 15.834373, Saving to models_tweet/eval/bestmodel_1
+2023-05-10 08:28:01,232 INFO    :        | end of iter   0 | time:  1.15s | train loss 0.2050 | 
+2023-05-10 08:28:01,233 INFO    : [INFO] The learning rate now is 0.000005
+2023-05-10 08:28:01,233 INFO    :    | end of epoch 100 | time: 15.23s | epoch train loss 20.4970 | 
+2023-05-10 08:28:01,233 INFO    : [INFO] Starting eval for this model ...
+2023-05-10 08:28:03,559 INFO    : [INFO] End of valid | time:  2.33s | valid loss 15.7955 | 
+2023-05-10 08:28:03,559 INFO    : Rouge1:
+	p:0.419689, r:0.294545, f:0.346154
+Rouge2:
+	p:0.201299, r:0.148681, f:0.171034
+Rougel:
+	p:0.398964, r:0.280000, f:0.329060
+
+2023-05-10 08:28:03,559 INFO    : [INFO] Validset match_true 3, pred 15, true 4, total 150, match 137
+2023-05-10 08:28:03,559 INFO    : [INFO] The size of totalset is 1, sent_number is 150, accu is 0.913333, precision is 0.200000, recall is 0.750000, F is 0.315789
+2023-05-10 08:28:03,559 INFO    : [INFO] Found new best model with 15.795459 running_avg_loss. The original loss is 15.814747, Saving to models_tweet/eval/bestmodel_2

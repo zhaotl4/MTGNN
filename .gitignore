@@ -1,0 +1,15 @@
+*.txt
+*.zip
+*.jsonl
+*.bin
+*.json
+*.pth
+bert_cache/
+cache/
+dataset/
+*.pyc
+models/
+models_arxiv/
+models_tweet/
+log_arxiv/
+log_tweet/

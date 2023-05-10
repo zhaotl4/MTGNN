@@ -8,6 +8,7 @@ from transformers import BertModel, BertTokenizer
 from torch.utils.data import (DataLoader, RandomSampler, SequentialSampler, TensorDataset)
 import numpy as np
 import json
+import os
 
 class InputFeatures(object):
     def __init__(self, input_ids, input_mask):
@@ -55,6 +56,7 @@ def main():
 
     args = parser.parse_args()
 
+    # os.environ['CUDA_VISIBLE_DEVICES'] = '3'
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
     tokenizer = BertTokenizer.from_pretrained(args.bert_model, do_lower_case=args.do_lower_case)
@@ -105,6 +107,9 @@ def main():
                         output.append(torch.matmul(all_encoder_layers[j], W[i]))
                     else:
                         output.append(all_encoder_layers[j])
+                # print('-------------')
+                # print(output)
+                # print(type(torch.stack(output)))
                 output_ = torch.sum(torch.stack(output), dim=0)
 
                 for i in range(len(input_ids)):

@@ -1,0 +1,14 @@
+2023-05-10 07:49:34,937 INFO    : Pytorch 1.13.1
+2023-05-10 07:49:34,937 INFO    : [INFO] Create Vocab, vocab path is cache/tweet/vocab
+2023-05-10 07:49:34,966 INFO    : [INFO] Finished constructing vocabulary of 39393 total words. Last word added: giveaways!
+2023-05-10 07:49:35,035 INFO    : [INFO] Loading external word embedding...
+2023-05-10 07:50:09,156 INFO    : [INFO] External Word Embedding iov count: 29243, oov count: 10150
+2023-05-10 07:50:09,302 INFO    : Namespace(atten_dropout_prob=0.1, batch_size=100, bert_path='bert_features_tweet', bidirectional=True, blocking=False, cache_dir='cache/tweet', cuda=True, data_dir='data_tweet/exp_data', doc_max_timesteps=150, embed_train=False, embedding_path='glove.42B.300d.txt', feat_embed_size=50, ffn_dropout_prob=0.1, ffn_inner_hidden_size=512, gcn_hidden_size=128, gpu='0', hidden_size=64, limited=False, log_root='log_tweet/', lstm_hidden_state=128, lstm_layers=2, m=15, model='MTHSG', n_feature_size=128, n_head=8, n_iter=1, n_layers=1, recurrent_dropout_prob=0.1, save_label=False, save_root='models_tweet', sent_max_len=100, test_model='multi', use_orthnormal_init=True, use_pyrouge=True, vocab_size=50000, word_emb_dim=300, word_embedding=True)
+2023-05-10 07:50:09,435 INFO    : [MODEL] HeterSumGraph 
+2023-05-10 07:50:09,435 INFO    : [INFO] Start reading ExampleSet
+2023-05-10 07:50:09,439 INFO    : [INFO] Finish reading ExampleSet. Total time is 0.003134, Total size is 2
+2023-05-10 07:50:09,439 INFO    : [INFO] Loading filter word File cache/tweet/filter_word.txt
+2023-05-10 07:50:09,448 INFO    : [INFO] Loading word2sent TFIDF file from cache/tweet/test.w2s.tfidf.jsonl!
+2023-05-10 07:50:11,055 INFO    : [INFO] Use cuda
+2023-05-10 07:50:11,055 INFO    : [INFO] Decoding...
+2023-05-10 07:50:11,055 INFO    : [INFO] Restoring evalbestmodel_0 for testing...The path is models_tweet/eval/bestmodel_0

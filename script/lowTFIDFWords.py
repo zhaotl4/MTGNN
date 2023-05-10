@@ -52,7 +52,7 @@ def main():
     del tfidf_matrix
     word_order = np.argsort(word_tfidf[0])
 
-    id2word = vectorizer.get_feature_names()
+    id2word = vectorizer.get_feature_names_out()
     with open(saveFile, "w") as fout:
         for idx in word_order:
             w = id2word[idx]

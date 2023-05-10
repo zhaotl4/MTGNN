@@ -1,0 +1,2 @@
+# CUDA_VISIBLE_DEVICES=3 python train.py --cuda --gpu 3 --data_dir dataset/arxiv --cache_dir cache/arxiv --embedding_path glove.42B.300d.txt --model MTHSG --save_root models_arxiv --log_root log_arxiv/ --bert_path bert_features_arxiv --lr_descent --grad_clip -m 3
+python train.py --cuda --gpu 3 --data_dir dataset/arxiv --cache_dir cache/arxiv --embedding_path glove.42B.300d.txt --model MTHSG --save_root models_arxiv --log_root log_arxiv/ --bert_path bert_features_arxiv --lr_descent --grad_clip -m 3

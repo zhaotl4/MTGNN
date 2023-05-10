@@ -49,7 +49,7 @@ def load_test_model(model, model_name, eval_dir, save_root):
         return None
     logger.info("[INFO] Restoring %s for testing...The path is %s", model_name, bestmodel_load_path)
 
-    model.load_state_dict(torch.load(bestmodel_load_path))
+    model.load_state_dict(torch.load(bestmodel_load_path,map_location='cuda:0'))
 
     return model
 
@@ -77,7 +77,7 @@ def run_test(model, dataset, loader, model_name, hps):
 
         for i, (G, index) in enumerate(loader):
             if hps.cuda:
-                G.to(torch.device("cuda"))
+                G = G.to(torch.device("cuda"))
             tester.evaluation(G, index, dataset, blocking=hps.blocking)
 
     running_avg_loss = tester.running_avg_loss
@@ -124,7 +124,7 @@ def main():
     # Important settings
     parser.add_argument('--model', type=str, default="HSG", help="model structure[HSG|HDSG]")
     parser.add_argument('--test_model', type=str, default='multi', help='choose different model to test [multi/evalbestmodel/trainbestmodel/earlystop]')
-    parser.add_argument('--use_pyrouge', action='store_true', default=True, help='use_pyrouge')
+    parser.add_argument('--use_pyrouge', action='store_true', default=False, help='use_pyrouge')
 
     parser.add_argument('--bert_path', type=str, default='bert_features_arxiv', help='The dataset directory.')
 

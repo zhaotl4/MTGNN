@@ -35,6 +35,7 @@ from tools.logger import *
 import random
 
 _DEBUG_FLAG_ = False
+torch.cuda.set_device(3)
 
 def save_model(model, save_file):
     with open(save_file, 'wb') as f:
@@ -99,48 +100,49 @@ def run_training(model, train_loader, valid_loader, valset, hps, train_dir):
         epoch_loss = 0.0
         train_loss = 0.0
         epoch_start_time = time.time()
-        for i, (G, index) in enumerate(train_loader):
-            iter_start_time = time.time()
-            model.train()
+        for xx in range(50):
+            for i, (G, index) in enumerate(train_loader):
+                iter_start_time = time.time()
+                model.train()
 
-            if hps.cuda:
-                G.to(torch.device("cuda"))
+                if hps.cuda:
+                    G = G.to(torch.device("cuda"))
 
-            outputs = model.forward(G)  # [n_snodes, 2]
-            snode_id = G.filter_nodes(lambda nodes: nodes.data["dtype"] == 1)
-            label = G.ndata["label"][snode_id].sum(-1)  # [n_nodes]
-            G.nodes[snode_id].data["loss"] = criterion(outputs, label).unsqueeze(-1)  # [n_nodes, 1]
-            loss = dgl.sum_nodes(G, "loss")  # [batch_size, 1]
-            loss = loss.mean()
+                outputs = model.forward(G)  # [n_snodes, 2]
+                snode_id = G.filter_nodes(lambda nodes: nodes.data["dtype"] == 1)
+                label = G.ndata["label"][snode_id].sum(-1)  # [n_nodes]
+                G.nodes[snode_id].data["loss"] = criterion(outputs, label).unsqueeze(-1)  # [n_nodes, 1]
+                loss = dgl.sum_nodes(G, "loss")  # [batch_size, 1]
+                loss = loss.mean()
 
-            if not (np.isfinite(loss.data.cpu())).numpy():
-                logger.error("train Loss is not finite. Stopping.")
-                logger.info(loss)
-                for name, param in model.named_parameters():
-                    if param.requires_grad:
-                        logger.info(name)
-                        # logger.info(param.grad.data.sum())
-                raise Exception("train Loss is not finite. Stopping.")
-
-            optimizer.zero_grad()
-            loss.backward()
-            if hps.grad_clip:
-                torch.nn.utils.clip_grad_norm_(model.parameters(), hps.max_grad_norm)
-
-            optimizer.step()
-
-            train_loss += float(loss.data)
-            epoch_loss += float(loss.data)
-
-            if i % 100 == 0:
-                if _DEBUG_FLAG_:
+                if not (np.isfinite(loss.data.cpu())).numpy():
+                    logger.error("train Loss is not finite. Stopping.")
+                    logger.info(loss)
                     for name, param in model.named_parameters():
                         if param.requires_grad:
-                            logger.debug(name)
-                            logger.debug(param.grad.data.sum())
-                logger.info('       | end of iter {:3d} | time: {:5.2f}s | train loss {:5.4f} | '
-                                .format(i, (time.time() - iter_start_time),float(train_loss / 100)))
-                train_loss = 0.0
+                            logger.info(name)
+                            # logger.info(param.grad.data.sum())
+                    raise Exception("train Loss is not finite. Stopping.")
+
+                optimizer.zero_grad()
+                loss.backward()
+                if hps.grad_clip:
+                    torch.nn.utils.clip_grad_norm_(model.parameters(), hps.max_grad_norm)
+
+                optimizer.step()
+
+                train_loss += float(loss.data)
+                epoch_loss += float(loss.data)
+
+                if i % 100 == 0:
+                    if _DEBUG_FLAG_:
+                        for name, param in model.named_parameters():
+                            if param.requires_grad:
+                                logger.debug(name)
+                                logger.debug(param.grad.data.sum())
+                    logger.info('       | end of iter {:3d} | time: {:5.2f}s | train loss {:5.4f} | '
+                                    .format(i, (time.time() - iter_start_time),float(train_loss / 100)))
+                    train_loss = 0.0
 
         if hps.lr_descent:
             new_lr = max(5e-6, hps.lr / (epoch + 1))
@@ -158,17 +160,17 @@ def run_training(model, train_loader, valid_loader, valset, hps, train_dir):
                         save_file)
             save_model(model, save_file)
             best_train_loss = epoch_avg_loss
-        elif epoch_avg_loss >= best_train_loss:
-            logger.error("[Error] training loss does not descent. Stopping supervisor...")
-            save_model(model, os.path.join(train_dir, "earlystop"))
-            sys.exit(1)
+        # elif epoch_avg_loss >= best_train_loss:
+        #     logger.error("[Error] training loss does not descent. Stopping supervisor...")
+        #     save_model(model, os.path.join(train_dir, "earlystop"))
+        #     sys.exit(1)
 
         best_loss, best_F, non_descent_cnt, saveNo = run_eval(model, valid_loader, valset, hps, best_loss, best_F, non_descent_cnt, saveNo)
 
-        if non_descent_cnt >= 3:
-            logger.error("[Error] val loss does not descent for three times. Stopping supervisor...")
-            save_model(model, os.path.join(train_dir, "earlystop"))
-            return
+            # if non_descent_cnt >= 3:
+            #     logger.error("[Error] val loss does not descent for three times. Stopping supervisor...")
+            #     save_model(model, os.path.join(train_dir, "earlystop"))
+            #     return
 
 
 def run_eval(model, loader, valset, hps, best_loss, best_F, non_descent_cnt, saveNo):
@@ -196,7 +198,7 @@ def run_eval(model, loader, valset, hps, best_loss, best_F, non_descent_cnt, sav
         tester = SLTester(model, hps.m)
         for i, (G, index) in enumerate(loader):
             if hps.cuda:
-                G.to(torch.device("cuda"))
+                G = G.to(torch.device("cuda"))
             tester.evaluation(G, index, valset)
 
     running_avg_loss = tester.running_avg_loss
@@ -271,11 +273,11 @@ def main():
 
     # Hyperparameters
     parser.add_argument('--seed', type=int, default=666, help='set the random seed [default: 666]')
-    parser.add_argument('--gpu', type=str, default='0', help='GPU ID to use. [default: 0]')
+    parser.add_argument('--gpu', type=str, default='3', help='GPU ID to use. [default: 0]')
     parser.add_argument('--cuda', action='store_true', default=True, help='GPU or CPU [default: False]')
     parser.add_argument('--vocab_size', type=int, default=50000,help='Size of vocabulary. [default: 50000]')
-    parser.add_argument('--n_epochs', type=int, default=40, help='Number of epochs [default: 20]')
-    parser.add_argument('--batch_size', type=int, default=100, help='Mini batch size [default: 32]')
+    parser.add_argument('--n_epochs', type=int, default=100, help='Number of epochs [default: 20]')
+    parser.add_argument('--batch_size', type=int, default=50, help='Mini batch size [default: 32]')
     parser.add_argument('--n_iter', type=int, default=1, help='iteration hop [default: 1]')
 
     parser.add_argument('--word_embedding', action='store_true', default=True, help='whether to use Word embedding [default: True]')
@@ -311,7 +313,7 @@ def main():
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
 
-    os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
+    # os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
     torch.set_printoptions(threshold=50000)
 
     # File paths
@@ -352,18 +354,18 @@ def main():
         model = HSumGraph(hps, embed)
         logger.info("[MODEL] HeterSumGraph ")
         dataset = ExampleSet(DATA_FILE, vocab, hps.doc_max_timesteps, hps.sent_max_len, FILTER_WORD, train_w2s_path, bert_path)
-        train_loader = torch.utils.data.DataLoader(dataset, batch_size=hps.batch_size, shuffle=True, num_workers=32, collate_fn=graph_collate_fn)
+        train_loader = torch.utils.data.DataLoader(dataset, batch_size=hps.batch_size, shuffle=True, num_workers=16, collate_fn=graph_collate_fn)
         del dataset
         valid_dataset = ExampleSet(VALID_FILE, vocab, hps.doc_max_timesteps, hps.sent_max_len, FILTER_WORD, val_w2s_path, bert_path)
-        valid_loader = torch.utils.data.DataLoader(valid_dataset, batch_size=hps.batch_size, shuffle=False, collate_fn=graph_collate_fn, num_workers=32)
+        valid_loader = torch.utils.data.DataLoader(valid_dataset, batch_size=hps.batch_size, shuffle=False, collate_fn=graph_collate_fn, num_workers=16)
     elif hps.model == "MTHSG":
         model = MTSumGraph(hps, embed)
         logger.info("[MODEL] HeterSumGraph ")
         dataset = ExampleSet(DATA_FILE, vocab, hps.doc_max_timesteps, hps.sent_max_len, FILTER_WORD, train_w2s_path, bert_path)
-        train_loader = torch.utils.data.DataLoader(dataset, batch_size=hps.batch_size, shuffle=True, num_workers=32, collate_fn=graph_collate_fn)
+        train_loader = torch.utils.data.DataLoader(dataset, batch_size=hps.batch_size, shuffle=True, num_workers=0, collate_fn=graph_collate_fn)
         del dataset
         valid_dataset = ExampleSet(VALID_FILE, vocab, hps.doc_max_timesteps, hps.sent_max_len, FILTER_WORD, val_w2s_path, bert_path)
-        valid_loader = torch.utils.data.DataLoader(valid_dataset, batch_size=hps.batch_size, shuffle=False, collate_fn=graph_collate_fn, num_workers=32)
+        valid_loader = torch.utils.data.DataLoader(valid_dataset, batch_size=hps.batch_size, shuffle=False, collate_fn=graph_collate_fn, num_workers=0)
     else:
         logger.error("[ERROR] Invalid Model Type!")
         raise NotImplementedError("Model Type has not been implemented")

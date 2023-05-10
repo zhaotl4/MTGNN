@@ -1,0 +1,1 @@
+python evaluation.py --cuda --gpu 0 --data_dir data_tweet/exp_data --cache_dir cache/tweet --embedding_path glove.42B.300d.txt  --model MTHSG --save_root models_tweet --log_root log_tweet/ --bert_path bert_features_tweet -m 15 --test_model multi

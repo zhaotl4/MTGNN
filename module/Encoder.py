@@ -11,9 +11,8 @@ import torch.nn.init as init
 
 
 from module.PositionEmbedding import get_sinusoid_encoding_table
-
+import os
 WORD_PAD = "[PAD]"
-
 
 class sentEncoder(nn.Module):
     def __init__(self, hps, embed):
@@ -66,6 +65,8 @@ class sentEncoder(nn.Module):
         input_pos = torch.Tensor(sent_pos_list).long()
 
         if self._hps.cuda:
+            # os.environ['CUDA_VISIBLE_DEVICES'] = self._hps.gpu
+            # input_pos = input_pos.to(torch.device('cuda'))
             input_pos = input_pos.cuda()
         enc_pos_embed_input = self.position_embedding(input_pos.long())  # [s_nodes, D]
         enc_conv_input = enc_embed_input + enc_pos_embed_input

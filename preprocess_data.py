@@ -112,7 +112,7 @@ def format_to_lines(input_path, output_path, task):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Preprocessing dataset')
 
-    parser.add_argument('--input_path', type=str, default='dataset/arxiv-dataset', help='The dataset directory.')
+    parser.add_argument('--input_path', type=str, default='dataset/arxiv-dataset/arxiv-dataset', help='The dataset directory.')
     parser.add_argument('--ouput_path', type=str, default='dataset/arxiv', help='The dataset directory.')
     parser.add_argument('--task', type=str, default='train', help='dataset [train|val|test]')
 

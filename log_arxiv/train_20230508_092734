@@ -1,0 +1,121 @@
+2023-05-08 09:27:34,588 INFO    : Pytorch 1.13.1
+2023-05-08 09:27:34,588 INFO    : [INFO] Create Vocab, vocab path is cache/arxiv/vocab
+2023-05-08 09:27:34,627 INFO    : [INFO] max_size of vocab was specified as 50000; we now have 50000 words. Stopping reading.
+2023-05-08 09:27:34,627 INFO    : [INFO] Finished constructing vocabulary of 50000 total words. Last word added: e.laenen
+2023-05-08 09:27:34,723 INFO    : [INFO] Loading external word embedding...
+2023-05-08 09:28:15,424 INFO    : [INFO] External Word Embedding iov count: 37537, oov count: 12463
+2023-05-08 09:28:15,674 INFO    : Namespace(atten_dropout_prob=0.1, batch_size=50, bert_path='bert_features_arxiv', bidirectional=True, cache_dir='cache/arxiv', cuda=True, data_dir='dataset/arxiv', doc_max_timesteps=150, embed_train=False, embedding_path='glove.42B.300d.txt', feat_embed_size=50, ffn_dropout_prob=0.1, ffn_inner_hidden_size=512, gpu='3', grad_clip=True, hidden_size=64, log_root='log_arxiv/', lr=0.0005, lr_descent=True, lstm_hidden_state=128, lstm_layers=2, m=3, max_grad_norm=1.0, model='MTHSG', n_epochs=40, n_feature_size=128, n_head=8, n_iter=1, n_layers=1, recurrent_dropout_prob=0.1, restore_model='None', save_root='models_arxiv', seed=666, sent_max_len=100, use_orthnormal_init=True, vocab_size=50000, word_emb_dim=300, word_embedding=True)
+2023-05-08 09:28:15,822 INFO    : [MODEL] HeterSumGraph 
+2023-05-08 09:28:15,823 INFO    : [INFO] Start reading ExampleSet
+2023-05-08 09:28:17,526 INFO    : [INFO] Finish reading ExampleSet. Total time is 1.703174, Total size is 6439
+2023-05-08 09:28:17,526 INFO    : [INFO] Loading filter word File cache/arxiv/filter_word.txt
+2023-05-08 09:28:19,497 INFO    : [INFO] Loading word2sent TFIDF file from cache/arxiv/test.w2s.tfidf.jsonl!
+2023-05-08 09:28:32,749 INFO    : [INFO] Start reading ExampleSet
+2023-05-08 09:28:33,466 INFO    : [INFO] Finish reading ExampleSet. Total time is 0.716506, Total size is 6436
+2023-05-08 09:28:33,466 INFO    : [INFO] Loading filter word File cache/arxiv/filter_word.txt
+2023-05-08 09:28:35,389 INFO    : [INFO] Loading word2sent TFIDF file from cache/arxiv/val.w2s.tfidf.jsonl!
+2023-05-08 09:28:51,128 INFO    : [INFO] Use cuda
+2023-05-08 09:28:51,129 INFO    : [INFO] Create new model for training...
+2023-05-08 09:28:51,129 INFO    : [INFO] Starting run_training
+2023-05-08 09:30:10,604 INFO    :        | end of iter   0 | time: 17.64s | train loss 1.2181 | 
+2023-05-08 11:29:52,327 INFO    :        | end of iter 100 | time: 13.63s | train loss 11.5451 | 
+2023-05-08 12:02:34,507 INFO    : [INFO] The learning rate now is 0.000250
+2023-05-08 12:02:34,509 INFO    :    | end of epoch   1 | time: 9223.38s | epoch train loss 12.1293 | 
+2023-05-08 12:02:34,510 INFO    : [INFO] Found new best model with 12.129 running_train_loss. Saving to models_arxiv/train/bestmodel
+2023-05-08 12:02:34,595 INFO    : [INFO] Saving model to models_arxiv/train/bestmodel
+2023-05-08 12:02:34,595 INFO    : [INFO] Starting eval for this model ...
+2023-05-08 14:51:59,557 INFO    : [INFO] End of valid | time: 10164.96s | valid loss 10.0808 | 
+2023-05-08 14:51:59,558 INFO    : Rouge1:
+	p:0.448527, r:0.308190, f:0.353378
+Rouge2:
+	p:0.170491, r:0.106201, f:0.124810
+Rougel:
+	p:0.390965, r:0.267460, f:0.307272
+
+2023-05-08 14:51:59,558 INFO    : [INFO] Validset match_true 2832, pred 19308, true 15502, total 839335, match 810189
+2023-05-08 14:51:59,559 INFO    : [INFO] The size of totalset is 6436, sent_number is 839335, accu is 0.965275, precision is 0.146675, recall is 0.182686, F is 0.162712
+2023-05-08 14:51:59,559 INFO    : [INFO] Found new best model with 10.080822 running_avg_loss. The original loss is None, Saving to models_arxiv/eval/bestmodel_0
+2023-05-08 14:51:59,660 INFO    : [INFO] Found new best model with 0.162712 F. The original F is None, Saving to models_arxiv/eval/bestFmodel
+2023-05-08 14:53:10,015 INFO    :        | end of iter   0 | time: 12.95s | train loss 0.1008 | 
+2023-05-08 16:48:16,689 INFO    :        | end of iter 100 | time: 12.56s | train loss 9.7262 | 
+2023-05-08 17:20:24,992 INFO    : [INFO] The learning rate now is 0.000167
+2023-05-08 17:20:24,993 INFO    :    | end of epoch   2 | time: 8905.26s | epoch train loss 9.7055 | 
+2023-05-08 17:20:24,994 INFO    : [INFO] Found new best model with 9.705 running_train_loss. Saving to models_arxiv/train/bestmodel
+2023-05-08 17:20:25,340 INFO    : [INFO] Saving model to models_arxiv/train/bestmodel
+2023-05-08 17:20:25,341 INFO    : [INFO] Starting eval for this model ...
+2023-05-08 20:18:55,832 INFO    : [INFO] End of valid | time: 10710.49s | valid loss 9.4687 | 
+2023-05-08 20:18:55,832 INFO    : Rouge1:
+	p:0.418739, r:0.379065, f:0.383993
+Rouge2:
+	p:0.165528, r:0.145799, f:0.147410
+Rougel:
+	p:0.363529, r:0.328060, f:0.332782
+
+2023-05-08 20:18:55,832 INFO    : [INFO] Validset match_true 4024, pred 19308, true 15502, total 839335, match 812573
+2023-05-08 20:18:55,833 INFO    : [INFO] The size of totalset is 6436, sent_number is 839335, accu is 0.968115, precision is 0.208411, recall is 0.259579, F is 0.231198
+2023-05-08 20:18:55,833 INFO    : [INFO] Found new best model with 9.468748 running_avg_loss. The original loss is 10.080822, Saving to models_arxiv/eval/bestmodel_1
+2023-05-08 20:18:55,960 INFO    : [INFO] Found new best model with 0.231198 F. The original F is 0.162712, Saving to models_arxiv/eval/bestFmodel
+2023-05-08 20:20:12,629 INFO    :        | end of iter   0 | time: 14.86s | train loss 0.0887 | 
+2023-05-08 22:24:44,824 INFO    :        | end of iter 100 | time: 13.45s | train loss 9.3357 | 
+2023-05-08 22:59:12,739 INFO    : [INFO] The learning rate now is 0.000125
+2023-05-08 22:59:12,741 INFO    :    | end of epoch   3 | time: 9616.38s | epoch train loss 9.3466 | 
+2023-05-08 22:59:12,743 INFO    : [INFO] Found new best model with 9.347 running_train_loss. Saving to models_arxiv/train/bestmodel
+2023-05-08 22:59:13,069 INFO    : [INFO] Saving model to models_arxiv/train/bestmodel
+2023-05-08 22:59:13,070 INFO    : [INFO] Starting eval for this model ...
+2023-05-09 01:57:44,864 INFO    : [INFO] End of valid | time: 10711.79s | valid loss 9.3064 | 
+2023-05-09 01:57:44,864 INFO    : Rouge1:
+	p:0.441439, r:0.367874, f:0.387217
+Rouge2:
+	p:0.177082, r:0.142821, f:0.150246
+Rougel:
+	p:0.384516, r:0.319328, f:0.336624
+
+2023-05-09 01:57:44,864 INFO    : [INFO] Validset match_true 4165, pred 19308, true 15502, total 839335, match 812855
+2023-05-09 01:57:44,865 INFO    : [INFO] The size of totalset is 6436, sent_number is 839335, accu is 0.968451, precision is 0.215714, recall is 0.268675, F is 0.239299
+2023-05-09 01:57:44,865 INFO    : [INFO] Found new best model with 9.306373 running_avg_loss. The original loss is 9.468748, Saving to models_arxiv/eval/bestmodel_2
+2023-05-09 01:57:44,973 INFO    : [INFO] Found new best model with 0.239299 F. The original F is 0.231198, Saving to models_arxiv/eval/bestFmodel
+2023-05-09 01:58:57,269 INFO    :        | end of iter   0 | time: 14.19s | train loss 0.0984 | 
+2023-05-09 03:53:40,953 INFO    :        | end of iter 100 | time: 13.44s | train loss 9.1892 | 
+2023-05-09 04:25:02,430 INFO    : [INFO] The learning rate now is 0.000100
+2023-05-09 04:25:02,431 INFO    :    | end of epoch   4 | time: 8837.15s | epoch train loss 9.1749 | 
+2023-05-09 04:25:02,432 INFO    : [INFO] Found new best model with 9.175 running_train_loss. Saving to models_arxiv/train/bestmodel
+2023-05-09 04:25:02,754 INFO    : [INFO] Saving model to models_arxiv/train/bestmodel
+2023-05-09 04:25:02,754 INFO    : [INFO] Starting eval for this model ...
+2023-05-09 07:15:12,136 INFO    : [INFO] End of valid | time: 10209.38s | valid loss 9.4846 | 
+2023-05-09 07:15:12,137 INFO    : Rouge1:
+	p:0.426642, r:0.376153, f:0.386350
+Rouge2:
+	p:0.169621, r:0.145826, f:0.149301
+Rougel:
+	p:0.370536, r:0.325917, f:0.335083
+
+2023-05-09 07:15:12,137 INFO    : [INFO] Validset match_true 4146, pred 19308, true 15502, total 839335, match 812817
+2023-05-09 07:15:12,137 INFO    : [INFO] The size of totalset is 6436, sent_number is 839335, accu is 0.968406, precision is 0.214730, recall is 0.267449, F is 0.238207
+2023-05-09 07:16:18,642 INFO    :        | end of iter   0 | time: 13.36s | train loss 0.0929 | 
+2023-05-09 09:11:31,924 INFO    :        | end of iter 100 | time: 13.02s | train loss 9.0838 | 
+2023-05-09 09:42:58,406 INFO    : [INFO] The learning rate now is 0.000083
+2023-05-09 09:42:58,408 INFO    :    | end of epoch   5 | time: 8866.27s | epoch train loss 9.0779 | 
+2023-05-09 09:42:58,408 INFO    : [INFO] Found new best model with 9.078 running_train_loss. Saving to models_arxiv/train/bestmodel
+2023-05-09 09:42:58,818 INFO    : [INFO] Saving model to models_arxiv/train/bestmodel
+2023-05-09 09:42:58,818 INFO    : [INFO] Starting eval for this model ...
+2023-05-09 12:37:51,060 INFO    : [INFO] End of valid | time: 10492.24s | valid loss 9.1670 | 
+2023-05-09 12:37:51,061 INFO    : Rouge1:
+	p:0.448262, r:0.367212, f:0.390247
+Rouge2:
+	p:0.180423, r:0.143159, f:0.152018
+Rougel:
+	p:0.390474, r:0.319126, f:0.339455
+
+2023-05-09 12:37:51,061 INFO    : [INFO] Validset match_true 4225, pred 19308, true 15502, total 839335, match 812975
+2023-05-09 12:37:51,061 INFO    : [INFO] The size of totalset is 6436, sent_number is 839335, accu is 0.968594, precision is 0.218821, recall is 0.272545, F is 0.242746
+2023-05-09 12:37:51,061 INFO    : [INFO] Found new best model with 9.167023 running_avg_loss. The original loss is 9.306373, Saving to models_arxiv/eval/bestmodel_0
+2023-05-09 12:37:51,506 INFO    : [INFO] Found new best model with 0.242746 F. The original F is 0.239299, Saving to models_arxiv/eval/bestFmodel
+2023-05-09 12:39:02,082 INFO    :        | end of iter   0 | time: 14.71s | train loss 0.0906 | 
+2023-05-09 14:39:19,009 INFO    :        | end of iter 100 | time: 12.62s | train loss 8.9469 | 
+2023-05-09 15:12:29,497 INFO    : [INFO] The learning rate now is 0.000071
+2023-05-09 15:12:29,499 INFO    :    | end of epoch   6 | time: 9277.27s | epoch train loss 8.9575 | 
+2023-05-09 15:12:29,500 INFO    : [INFO] Found new best model with 8.958 running_train_loss. Saving to models_arxiv/train/bestmodel
+2023-05-09 15:12:30,069 INFO    : [INFO] Saving model to models_arxiv/train/bestmodel
+2023-05-09 15:12:30,069 INFO    : [INFO] Starting eval for this model ...
+2023-05-09 16:22:38,516 ERROR   : [Error] Caught keyboard interrupt on worker. Stopping supervisor...
+2023-05-09 16:22:38,623 INFO    : [INFO] Saving model to models_arxiv/train/earlystop
